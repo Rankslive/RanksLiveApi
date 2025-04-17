@@ -7,6 +7,7 @@ import { ResponseInterceptor } from '@/common/interceptor/response.interceptor'
 import { AppController } from './app.controller'
 import { BaiduModule } from '@/modules/baidu/baidu.module'
 import { WeiboModule } from './modules/weibo/weibo.module'
+import { JuejinModule } from './modules/juejin/juejin.module'
 
 @Module({
 	imports: [
@@ -15,7 +16,8 @@ import { WeiboModule } from './modules/weibo/weibo.module'
 			envFilePath: [`.env.${process.env.NODE_ENV}`]
 		}),
 		BaiduModule,
-		WeiboModule
+		WeiboModule,
+		JuejinModule
 
 	],
 	providers: [
