@@ -3,7 +3,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { BaiduService } from '@/modules/baidu/baidu.service'
 
 @Controller('baidu')
-@ApiTags('Baidu')
+@ApiTags('百度')
 export class BaiduController {
 	constructor(private BaiduService: BaiduService) {}
 
