@@ -5,14 +5,16 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core'
 import { AllExceptionFilter } from '@/common/filters/all-exception.filter'
 import { ResponseInterceptor } from '@/common/interceptor/response.interceptor'
 import { AppController } from './app.controller'
+import { BaiduModule } from '@/modules/baidu/baidu.module'
 
 @Module({
 	imports: [
 		ConfigModule.forRoot({
 			isGlobal: true,
 			envFilePath: [`.env.${process.env.NODE_ENV}`]
-		})
+		}),
 
+        BaiduModule,
 	],
 	providers: [
 		// 全局 异常过滤器
