@@ -14,7 +14,8 @@ import { BaiduModule } from '@/modules/baidu/baidu.module'
 			envFilePath: [`.env.${process.env.NODE_ENV}`]
 		}),
 
-        BaiduModule,
+		BaiduModule
+
 	],
 	providers: [
 		// 全局 异常过滤器
