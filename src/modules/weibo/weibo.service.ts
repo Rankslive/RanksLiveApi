@@ -2,10 +2,17 @@ import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { ResponseData } from '@/types/response.data'
 
+type WeiboDataType = 'hot' | 'entertainment'
+
 @Injectable()
 export class WeiboService {
+	url = {
+		hot: 'https://weibo.com/ajax/side/hotSearch',
+		entertainment: 'https://weibo.com/ajax/statuses/entertainment'
+	}
+
 	async getWeiboHot(): Promise<ResponseData[]> {
-		const result = await this.getData()
+		const result = await this.getData('hot')
 
 		return result.data.realtime.map((item: any) => {
 			return {
@@ -17,10 +24,10 @@ export class WeiboService {
 		})
 	}
 
-	async getData() {
+	async getData(type: WeiboDataType) {
 		const result = await request({
 			method: 'get',
-			url: 'https://weibo.com/ajax/side/hotSearch',
+			url: this.url[type],
 			headers: {
 				'User-Agent':
 					'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'
