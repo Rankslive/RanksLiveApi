@@ -7,15 +7,12 @@ export class ResponseDto<T> {
 
 	message: string
 
-	request_id: string
-
 	timestamp: number
 
-	constructor(data?: T, requestId?: string, message: string = 'success') {
+	constructor(data?: T, message: string = 'success') {
 		this.code = HttpStatus.OK
 		this.data = data || ''
 		this.message = message
-		this.request_id = requestId || ''
 
 		this.timestamp = Date.now()
 	}
@@ -44,15 +41,6 @@ export class ResponseDto<T> {
 	 */
 	setMessage(message: string) {
 		this.message = message
-		return this
-	}
-
-	/**
-	 * 设置请求id
-	 * @param requestId
-	 */
-	setRequestId(requestId: string) {
-		this.request_id = requestId
 		return this
 	}
 }

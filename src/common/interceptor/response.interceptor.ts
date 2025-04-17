@@ -16,6 +16,6 @@ export class ResponseInterceptor implements NestInterceptor {
 			response.status(HttpStatus.OK)
 		}
 
-		return next.handle().pipe(map((data) => new ResponseDto(data || [], request.requestId)))
+		return next.handle().pipe(map((data) => new ResponseDto(data || [])))
 	}
 }
