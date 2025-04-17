@@ -38,7 +38,7 @@ export class AllExceptionFilter<T> implements ExceptionFilter {
 
 		response
 			.status(HttpStatus.OK)
-			.json(new ResponseDto(message).setCode(code).setRequestId(request.requestId).setMessage('error'))
+			.json(new ResponseDto(message).setCode(code).setMessage('error'))
 	}
 
 	/**
