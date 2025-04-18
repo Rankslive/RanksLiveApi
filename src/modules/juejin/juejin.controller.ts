@@ -4,7 +4,7 @@ import { JuejinService } from '@/modules/juejin/juejin.service'
 import { JuejinConstants } from '@/constants/juejin.constants'
 
 @Controller('juejin')
-@ApiTags('掘金')
+@ApiTags('稀土掘金')
 export class JuejinController {
 	constructor(private readonly JuejinService: JuejinService) {}
 
