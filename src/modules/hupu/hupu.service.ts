@@ -5,7 +5,7 @@ import { ResponseData } from '@/types/response.data'
 const moduleName = {
     'basketball': '篮球热榜',
     'football': '足球热榜',
-    'street': '步行街街热榜'
+    'street': '步行街热榜'
 }
 
 @Injectable()
