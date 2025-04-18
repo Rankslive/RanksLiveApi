@@ -9,6 +9,7 @@ import { BaiduModule } from '@/modules/baidu/baidu.module'
 import { WeiboModule } from '@/modules/weibo/weibo.module'
 import { JuejinModule } from '@/modules/juejin/juejin.module'
 import { HupuModule } from '@/modules/hupu/hupu.module'
+import { ToutiaoModule } from './modules/toutiao/toutiao.module'
 
 @Module({
 	imports: [
@@ -20,7 +21,8 @@ import { HupuModule } from '@/modules/hupu/hupu.module'
 		BaiduModule,
 		HupuModule,
 		WeiboModule,
-		JuejinModule
+		JuejinModule,
+		ToutiaoModule
 
 	],
 	providers: [
