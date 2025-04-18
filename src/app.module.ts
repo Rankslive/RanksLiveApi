@@ -9,8 +9,9 @@ import { BaiduModule } from '@/modules/baidu/baidu.module'
 import { WeiboModule } from '@/modules/weibo/weibo.module'
 import { JuejinModule } from '@/modules/juejin/juejin.module'
 import { HupuModule } from '@/modules/hupu/hupu.module'
-import { ToutiaoModule } from './modules/toutiao/toutiao.module'
-import { ZhihuModule } from './modules/zhihu/zhihu.module'
+import { ToutiaoModule } from '@/modules/toutiao/toutiao.module'
+import { ZhihuModule } from '@/modules/zhihu/zhihu.module'
+import { CsdnModule } from '@/modules/csdn/csdn.module'
 
 @Module({
 	imports: [
@@ -22,6 +23,7 @@ import { ZhihuModule } from './modules/zhihu/zhihu.module'
 		BaiduModule,
 		HupuModule,
 		WeiboModule,
+		CsdnModule,
 		JuejinModule,
 		ToutiaoModule,
 		ZhihuModule

@@ -1,0 +1,22 @@
+export const CsdnConstants = {
+	'C/C++': 'C/C++',
+	'cloud-native': '云原生',
+	'cutting-edge-technology': '人工智能',
+	'software-engineering': '软件工程',
+	backend: '后端',
+	java: 'java',
+	javascript: 'javascript',
+	php: 'php',
+	python: 'python',
+	blockchain: '区块链',
+	'big-data': '大数据',
+	mobile: '移动开发',
+	embedded: '嵌入式',
+	tool: '开发工具',
+	algorithm: '结构与算法',
+	microSoft: '微软技术',
+	test: '测试',
+	game: '游戏',
+	network: '网络',
+	devOps: '运维'
+} as const
