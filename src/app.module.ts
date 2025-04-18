@@ -12,6 +12,7 @@ import { HupuModule } from '@/modules/hupu/hupu.module'
 import { ToutiaoModule } from '@/modules/toutiao/toutiao.module'
 import { ZhihuModule } from '@/modules/zhihu/zhihu.module'
 import { CsdnModule } from '@/modules/csdn/csdn.module'
+import { WeReadModule } from './modules/weread/we.read.module'
 
 @Module({
 	imports: [
@@ -26,7 +27,8 @@ import { CsdnModule } from '@/modules/csdn/csdn.module'
 		CsdnModule,
 		JuejinModule,
 		ToutiaoModule,
-		ZhihuModule
+		ZhihuModule,
+		WeReadModule
 
 	],
 	providers: [

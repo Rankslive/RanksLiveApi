@@ -41,6 +41,7 @@
 		"class-validator": "^0.14.1",
 		"dayjs": "^1.11.13",
 		"ioredis": "^5.6.0",
+		"md5-typescript": "^1.0.5",
 		"passport": "^0.7.0",
 		"passport-jwt": "^4.0.1",
 		"passport-local": "^1.0.0",
