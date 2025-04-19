@@ -13,6 +13,7 @@ import { ToutiaoModule } from '@/modules/toutiao/toutiao.module'
 import { ZhihuModule } from '@/modules/zhihu/zhihu.module'
 import { CsdnModule } from '@/modules/csdn/csdn.module'
 import { WeReadModule } from './modules/weread/we.read.module'
+import { DouyinModule } from './modules/douyin/douyin.module'
 
 @Module({
 	imports: [
@@ -28,7 +29,8 @@ import { WeReadModule } from './modules/weread/we.read.module'
 		JuejinModule,
 		ToutiaoModule,
 		ZhihuModule,
-		WeReadModule
+		WeReadModule,
+		DouyinModule
 
 	],
 	providers: [
