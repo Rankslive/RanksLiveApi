@@ -34,13 +34,17 @@ export class HupuService {
 		const scriptMatches = [...content.data.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/gi)]
 		let resultStr = ''
 
-        for (const [, , scriptContent] of scriptMatches) {
-            const dataMatch = scriptContent.match(/window\.\$\$data\s*=\s*([\s\S]*?)(?=\s*;|$)/)
-            if (dataMatch) {
-                resultStr = dataMatch[1]
-                break
-            }
-        }
-        return JSON.parse(resultStr).hotList
-    }
+		for (const [
+			,
+			,
+			scriptContent
+		] of scriptMatches) {
+			const dataMatch = scriptContent.match(/window\.\$\$data\s*=\s*([\s\S]*?)(?=\s*;|$)/)
+			if (dataMatch) {
+				resultStr = dataMatch[1]
+				break
+			}
+		}
+		return JSON.parse(resultStr).hotList
+	}
 }
