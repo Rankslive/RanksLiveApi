@@ -115,7 +115,7 @@ export const encodeRid = async (params: object): Promise<URLSearchParams> => {
 	// 计算wbi签名
 	const wbiSign = md5(query.toString() + mixinKey)
 
-	query.set('rid', wbiSign)
+	query.set('w_rid', wbiSign)
 
 	return query
 }
