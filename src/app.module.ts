@@ -16,6 +16,7 @@ import { WeReadModule } from './modules/weread/we.read.module'
 import { DouyinModule } from './modules/douyin/douyin.module'
 import { BilibiliModule } from './modules/bilibili/bilibili.module'
 import { YqqModule } from './modules/yqq/yqq.module'
+import { AcfunModule } from './modules/acfun/acfun.module'
 
 @Module({
 	imports: [
@@ -34,7 +35,8 @@ import { YqqModule } from './modules/yqq/yqq.module'
 		WeReadModule,
 		DouyinModule,
 		BilibiliModule,
-		YqqModule
+		YqqModule,
+		AcfunModule
 
 	],
 	providers: [
