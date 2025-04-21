@@ -15,6 +15,7 @@ import { CsdnModule } from '@/modules/csdn/csdn.module'
 import { WeReadModule } from './modules/weread/we.read.module'
 import { DouyinModule } from './modules/douyin/douyin.module'
 import { BilibiliModule } from './modules/bilibili/bilibili.module'
+import { YqqModule } from './modules/yqq/yqq.module'
 
 @Module({
 	imports: [
@@ -32,7 +33,8 @@ import { BilibiliModule } from './modules/bilibili/bilibili.module'
 		ZhihuModule,
 		WeReadModule,
 		DouyinModule,
-		BilibiliModule
+		BilibiliModule,
+		YqqModule
 
 	],
 	providers: [
