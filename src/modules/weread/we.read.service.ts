@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { getWeReadID } from '@/utils/we.read.id'
-import { WeReadCategoryType, WeReadRankUrl } from '@/types/we.read'
+import { WeReadCategoryType, WeReadRankUrl } from '../../../types/we.read'
 
 const rankUrl: WeReadRankUrl = {
 	// 飙升榜

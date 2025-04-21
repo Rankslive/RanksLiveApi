@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { ResponseData } from '@/types/response.data'
+import { ResponseData } from '../../../types/response.data'
 import request from '@/utils/request'
 
 @Injectable()

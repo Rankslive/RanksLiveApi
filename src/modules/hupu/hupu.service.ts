@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
-import { ResponseData } from '@/types/response.data'
+import { ResponseData } from '../../../types/response.data'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 
 const moduleName = {
