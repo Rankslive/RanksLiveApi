@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
+import { BASE_USER_AGENT } from '@/constants/base.constants'
 
 @Injectable()
 export class BaiduService {
@@ -29,5 +30,28 @@ export class BaiduService {
 
 		const matchResult = content.data.match(/<!--s-data:(.*?)-->/s)
 		return JSON.parse(matchResult[1]).cards[0].content
+	}
+
+	async getBaiduTieBaDiscussionRank() {
+		const { data } = await request({
+			method: 'get',
+			url: 'https://tieba.baidu.com/hottopic/browse/topicList',
+			headers: {
+				'User-Agent': BASE_USER_AGENT
+			}
+		})
+
+		if (!data) {
+			return []
+		}
+
+		return data.data.bang_topic.topic_list.map((item: any) => {
+			return {
+				title: item.topic_name,
+				view: item.discuss_num,
+				url: item.topic_url,
+				create_time: item.create_time
+			}
+		})
 	}
 }
