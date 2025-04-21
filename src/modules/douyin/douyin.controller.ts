@@ -10,6 +10,6 @@ export class DouyinController {
 	@Get('hot')
 	@ApiOperation({ summary: '获取抖音热榜' })
 	async getDouYinHot() {
-		return this.DouYinService.getHotRankList()
+		return await this.DouYinService.getHotRankList()
 	}
 }

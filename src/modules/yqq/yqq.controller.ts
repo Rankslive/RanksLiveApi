@@ -11,185 +11,185 @@ export class YqqController {
 	@Get('musicTopList')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 音乐榜单' })
 	async getMusicTopList() {
-		return this.YqqService.getMusicTopList()
+		return await this.YqqService.getMusicTopList()
 	}
 	@Get('rank/surge')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 飙升榜榜' })
 	async getSurgeRank() {
-		return this.YqqService.getRanksList(YQqConstants.surge)
+		return await this.YqqService.getRanksList(YQqConstants.surge)
 	}
 
 	@Get('rank/hot')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 热歌榜榜' })
 	async getHotRank() {
-		return this.YqqService.getRanksList(YQqConstants.hot)
+		return await this.YqqService.getRanksList(YQqConstants.hot)
 	}
 
 	@Get('rank/new')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 新歌榜榜' })
 	async getNewRank() {
-		return this.YqqService.getRanksList(YQqConstants.new)
+		return await this.YqqService.getRanksList(YQqConstants.new)
 	}
 
 	@Get('rank/popular')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 流行指数榜榜' })
 	async getPopularRank() {
-		return this.YqqService.getRanksList(YQqConstants.popular)
+		return await this.YqqService.getRanksList(YQqConstants.popular)
 	}
 
 	@Get('rank/tencent/musician')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 腾讯音乐人原创榜榜' })
 	async getTencentMusicianRank() {
-		return this.YqqService.getRanksList(YQqConstants.tencent_musician)
+		return await this.YqqService.getRanksList(YQqConstants.tencent_musician)
 	}
 
 	@Get('rank/identify')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 听歌识曲榜榜' })
 	async getIdentifyRank() {
-		return this.YqqService.getRanksList(YQqConstants.identify)
+		return await this.YqqService.getRanksList(YQqConstants.identify)
 	}
 
 	@Get('rank/inland')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 内地榜榜' })
 	async getInlandRank() {
-		return this.YqqService.getRanksList(YQqConstants.inland)
+		return await this.YqqService.getRanksList(YQqConstants.inland)
 	}
 
 	@Get('rank/hongkong')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 香港地区榜榜' })
 	async getHongkongRank() {
-		return this.YqqService.getRanksList(YQqConstants.hongkong)
+		return await this.YqqService.getRanksList(YQqConstants.hongkong)
 	}
 
 	@Get('rank/taiwan')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 台湾地区榜榜' })
 	async getTaiwanRank() {
-		return this.YqqService.getRanksList(YQqConstants.taiwan)
+		return await this.YqqService.getRanksList(YQqConstants.taiwan)
 	}
 
 	@Get('rank/westerner')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 欧美榜榜' })
 	async getWesternerRank() {
-		return this.YqqService.getRanksList(YQqConstants.westerner)
+		return await this.YqqService.getRanksList(YQqConstants.westerner)
 	}
 
 	@Get('rank/korea')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 韩国榜榜' })
 	async getKoreaRank() {
-		return this.YqqService.getRanksList(YQqConstants.korea)
+		return await this.YqqService.getRanksList(YQqConstants.korea)
 	}
 
 	@Get('rank/japan')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 日本榜榜' })
 	async getJapanRank() {
-		return this.YqqService.getRanksList(YQqConstants.japan)
+		return await this.YqqService.getRanksList(YQqConstants.japan)
 	}
 
 	@Get('rank/joox')
 	@ApiOperation({ summary: '获取 QQ 音乐 · JOOX本地热播榜榜' })
 	async getJooxRank() {
-		return this.YqqService.getRanksList(YQqConstants.joox)
+		return await this.YqqService.getRanksList(YQqConstants.joox)
 	}
 
 	@Get('rank/hongkong/tvb')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 香港TVB劲歌金榜榜' })
 	async getHongkongTvbRank() {
-		return this.YqqService.getRanksList(YQqConstants.hongkong_tvb)
+		return await this.YqqService.getRanksList(YQqConstants.hongkong_tvb)
 	}
 
 	@Get('rank/taiwan/kkbox')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 台湾KKBOX榜榜' })
 	async getTaiwanKkboxRank() {
-		return this.YqqService.getRanksList(YQqConstants.taiwan_kkbox)
+		return await this.YqqService.getRanksList(YQqConstants.taiwan_kkbox)
 	}
 
 	@Get('rank/rap')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 说唱榜榜' })
 	async getRapRank() {
-		return this.YqqService.getRanksList(YQqConstants.rap)
+		return await this.YqqService.getRanksList(YQqConstants.rap)
 	}
 
 	@Get('rank/electric')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 电音榜榜' })
 	async getElectricRank() {
-		return this.YqqService.getRanksList(YQqConstants.electric)
+		return await this.YqqService.getRanksList(YQqConstants.electric)
 	}
 
 	@Get('rank/game')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 游戏音乐榜榜' })
 	async getGameRank() {
-		return this.YqqService.getRanksList(YQqConstants.game)
+		return await this.YqqService.getRanksList(YQqConstants.game)
 	}
 
 	@Get('rank/anime')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 动漫音乐榜榜' })
 	async getAnimeRank() {
-		return this.YqqService.getRanksList(YQqConstants.anime)
+		return await this.YqqService.getRanksList(YQqConstants.anime)
 	}
 
 	@Get('rank/video')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 影视金曲榜榜' })
 	async getVideoRank() {
-		return this.YqqService.getRanksList(YQqConstants.video)
+		return await this.YqqService.getRanksList(YQqConstants.video)
 	}
 
 	@Get('rank/variety')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 综艺新歌榜榜' })
 	async getVarietyRank() {
-		return this.YqqService.getRanksList(YQqConstants.variety)
+		return await this.YqqService.getRanksList(YQqConstants.variety)
 	}
 
 	@Get('rank/guofeng')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 国风热歌榜榜' })
 	async getGuofengRank() {
-		return this.YqqService.getRanksList(YQqConstants.guofeng)
+		return await this.YqqService.getRanksList(YQqConstants.guofeng)
 	}
 
 	@Get('rank/kge')
 	@ApiOperation({ summary: '获取 QQ 音乐 · K歌金曲榜榜' })
 	async getKgeRank() {
-		return this.YqqService.getRanksList(YQqConstants.kge)
+		return await this.YqqService.getRanksList(YQqConstants.kge)
 	}
 
 	@Get('rank/douyin')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 抖音热歌榜榜' })
 	async getDouyinRank() {
-		return this.YqqService.getRanksList(YQqConstants.douyin)
+		return await this.YqqService.getRanksList(YQqConstants.douyin)
 	}
 
 	@Get('rank/dj')
 	@ApiOperation({ summary: '获取 QQ 音乐 · DJ舞曲榜榜' })
 	async getDjRank() {
-		return this.YqqService.getRanksList(YQqConstants.dj)
+		return await this.YqqService.getRanksList(YQqConstants.dj)
 	}
 
 	@Get('rank/network')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 网络歌曲榜榜' })
 	async getNetworkRank() {
-		return this.YqqService.getRanksList(YQqConstants.network)
+		return await this.YqqService.getRanksList(YQqConstants.network)
 	}
 
 	@Get('rank/billboard')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 美国公告牌榜榜' })
 	async getBillboardRank() {
-		return this.YqqService.getRanksList(YQqConstants.billboard)
+		return await this.YqqService.getRanksList(YQqConstants.billboard)
 	}
 
 	@Get('rank/melon')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 韩国Melon榜榜' })
 	async getMelonRank() {
-		return this.YqqService.getRanksList(YQqConstants.melon)
+		return await this.YqqService.getRanksList(YQqConstants.melon)
 	}
 
 	@Get('rank/uk')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 英国UK榜榜' })
 	async getUkRank() {
-		return this.YqqService.getRanksList(YQqConstants.uk)
+		return await this.YqqService.getRanksList(YQqConstants.uk)
 	}
 
 	@Get('rank/japan/public')
 	@ApiOperation({ summary: '获取 QQ 音乐 · 日本公信榜榜' })
 	async getJapanPublicRank() {
-		return this.YqqService.getRanksList(YQqConstants.japan_public)
+		return await this.YqqService.getRanksList(YQqConstants.japan_public)
 	}
 }

@@ -10,6 +10,6 @@ export class WeiboController {
 	@Get('hot')
 	@ApiOperation({ summary: '微博热搜' })
 	async getWeiboHot() {
-		return this.WeiboService.getWeiboHot()
+		return await this.WeiboService.getWeiboHot()
 	}
 }
