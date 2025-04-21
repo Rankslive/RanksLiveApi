@@ -17,6 +17,7 @@ import { DouyinModule } from './modules/douyin/douyin.module'
 import { BilibiliModule } from './modules/bilibili/bilibili.module'
 import { YqqModule } from './modules/yqq/yqq.module'
 import { AcfunModule } from './modules/acfun/acfun.module'
+import { NeteaseModule } from './modules/netease/netease.module'
 
 @Module({
 	imports: [
@@ -36,7 +37,8 @@ import { AcfunModule } from './modules/acfun/acfun.module'
 		DouyinModule,
 		BilibiliModule,
 		YqqModule,
-		AcfunModule
+		AcfunModule,
+		NeteaseModule
 
 	],
 	providers: [
