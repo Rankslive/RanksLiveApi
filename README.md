@@ -37,6 +37,7 @@
 | QQ 音乐           | y.qq     | ✅   |
 | 网易云音乐        | netease  | ✅   |
 | v2ex              | v2ex     | ✅   |
+| iT之家            | it.home  | ✅   |
 
 > 我们将持续扩展支持的平台列表，欢迎在 [Issues](https://github.com/Rankslive/RanksLiveApi/issues) 中提出新的平台支持请求。
 

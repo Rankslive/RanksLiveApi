@@ -20,6 +20,7 @@ import { AcfunModule } from './modules/acfun/acfun.module'
 import { NeteaseModule } from './modules/netease/netease.module'
 import { ThreeSixKrModule } from './modules/three.six.kr/three.six.kr.module'
 import { V2exModule } from './modules/v2ex/v2ex.module'
+import { ItHomeModule } from './modules/it.home/it.home.module'
 
 @Module({
 	imports: [
@@ -42,7 +43,8 @@ import { V2exModule } from './modules/v2ex/v2ex.module'
 		AcfunModule,
 		NeteaseModule,
 		ThreeSixKrModule,
-		V2exModule
+		V2exModule,
+		ItHomeModule
 
 	],
 	providers: [
