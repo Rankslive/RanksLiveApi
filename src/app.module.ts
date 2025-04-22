@@ -22,6 +22,7 @@ import { ThreeSixKrModule } from './modules/three.six.kr/three.six.kr.module'
 import { V2exModule } from './modules/v2ex/v2ex.module'
 import { ItHomeModule } from './modules/it.home/it.home.module'
 import { ThePaperModule } from './modules/the.paper/the.paper.module'
+import { SspaiModule } from './modules/sspai/sspai.module'
 
 @Module({
 	imports: [
@@ -46,7 +47,8 @@ import { ThePaperModule } from './modules/the.paper/the.paper.module'
 		ThreeSixKrModule,
 		V2exModule,
 		ItHomeModule,
-		ThePaperModule
+		ThePaperModule,
+		SspaiModule
 
 	],
 	providers: [

@@ -39,6 +39,7 @@
 | v2ex              | v2ex      | ✅   |
 | iT之家            | it.home   | ✅   |
 | 澎湃新闻          | the.paper | ✅   |
+| 少数派            | sspai     | ✅   |
 
 > 我们将持续扩展支持的平台列表，欢迎在 [Issues](https://github.com/Rankslive/RanksLiveApi/issues) 中提出新的平台支持请求。
 
