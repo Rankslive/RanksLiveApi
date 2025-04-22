@@ -21,6 +21,7 @@ import { NeteaseModule } from './modules/netease/netease.module'
 import { ThreeSixKrModule } from './modules/three.six.kr/three.six.kr.module'
 import { V2exModule } from './modules/v2ex/v2ex.module'
 import { ItHomeModule } from './modules/it.home/it.home.module'
+import { ThePaperModule } from './modules/the.paper/the.paper.module'
 
 @Module({
 	imports: [
@@ -44,7 +45,8 @@ import { ItHomeModule } from './modules/it.home/it.home.module'
 		NeteaseModule,
 		ThreeSixKrModule,
 		V2exModule,
-		ItHomeModule
+		ItHomeModule,
+		ThePaperModule
 
 	],
 	providers: [
