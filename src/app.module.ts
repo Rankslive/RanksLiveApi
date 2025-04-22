@@ -23,6 +23,7 @@ import { V2exModule } from './modules/v2ex/v2ex.module'
 import { ItHomeModule } from './modules/it.home/it.home.module'
 import { ThePaperModule } from './modules/the.paper/the.paper.module'
 import { SspaiModule } from './modules/sspai/sspai.module'
+import { QqNewsModule } from './modules/qq.news/qq.news.module'
 
 @Module({
 	imports: [
@@ -48,7 +49,8 @@ import { SspaiModule } from './modules/sspai/sspai.module'
 		V2exModule,
 		ItHomeModule,
 		ThePaperModule,
-		SspaiModule
+		SspaiModule,
+		QqNewsModule
 
 	],
 	providers: [
