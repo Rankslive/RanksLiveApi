@@ -18,6 +18,7 @@ import { BilibiliModule } from './modules/bilibili/bilibili.module'
 import { YqqModule } from './modules/yqq/yqq.module'
 import { AcfunModule } from './modules/acfun/acfun.module'
 import { NeteaseModule } from './modules/netease/netease.module'
+import { ThreeSixKrModule } from './modules/three.six.kr/three.six.kr.module'
 
 @Module({
 	imports: [
@@ -38,7 +39,8 @@ import { NeteaseModule } from './modules/netease/netease.module'
 		BilibiliModule,
 		YqqModule,
 		AcfunModule,
-		NeteaseModule
+		NeteaseModule,
+		ThreeSixKrModule
 
 	],
 	providers: [
