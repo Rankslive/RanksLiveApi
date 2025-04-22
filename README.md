@@ -41,6 +41,7 @@
 | 澎湃新闻          | the.paper | ✅   |
 | 少数派            | sspai     | ✅   |
 | 腾讯新闻          | qq.news   | ✅   |
+| 豆瓣              | douban    | ✅   |
 
 > 我们将持续扩展支持的平台列表，欢迎在 [Issues](https://github.com/Rankslive/RanksLiveApi/issues) 中提出新的平台支持请求。
 

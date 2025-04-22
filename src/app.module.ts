@@ -24,6 +24,7 @@ import { ItHomeModule } from './modules/it.home/it.home.module'
 import { ThePaperModule } from './modules/the.paper/the.paper.module'
 import { SspaiModule } from './modules/sspai/sspai.module'
 import { QqNewsModule } from './modules/qq.news/qq.news.module'
+import { DoubanModule } from './modules/douban/douban.module'
 
 @Module({
 	imports: [
@@ -50,7 +51,8 @@ import { QqNewsModule } from './modules/qq.news/qq.news.module'
 		ItHomeModule,
 		ThePaperModule,
 		SspaiModule,
-		QqNewsModule
+		QqNewsModule,
+		DoubanModule
 
 	],
 	providers: [
