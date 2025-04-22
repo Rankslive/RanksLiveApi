@@ -25,6 +25,7 @@ import { ThePaperModule } from './modules/the.paper/the.paper.module'
 import { SspaiModule } from './modules/sspai/sspai.module'
 import { QqNewsModule } from './modules/qq.news/qq.news.module'
 import { DoubanModule } from './modules/douban/douban.module'
+import { AliyunModule } from './modules/aliyun/aliyun.module'
 
 @Module({
 	imports: [
@@ -52,7 +53,8 @@ import { DoubanModule } from './modules/douban/douban.module'
 		ThePaperModule,
 		SspaiModule,
 		QqNewsModule,
-		DoubanModule
+		DoubanModule,
+		AliyunModule
 
 	],
 	providers: [
