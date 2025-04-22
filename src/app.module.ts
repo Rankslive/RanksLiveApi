@@ -19,6 +19,7 @@ import { YqqModule } from './modules/yqq/yqq.module'
 import { AcfunModule } from './modules/acfun/acfun.module'
 import { NeteaseModule } from './modules/netease/netease.module'
 import { ThreeSixKrModule } from './modules/three.six.kr/three.six.kr.module'
+import { V2exModule } from './modules/v2ex/v2ex.module'
 
 @Module({
 	imports: [
@@ -40,7 +41,8 @@ import { ThreeSixKrModule } from './modules/three.six.kr/three.six.kr.module'
 		YqqModule,
 		AcfunModule,
 		NeteaseModule,
-		ThreeSixKrModule
+		ThreeSixKrModule,
+		V2exModule
 
 	],
 	providers: [
