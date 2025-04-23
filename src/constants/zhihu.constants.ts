@@ -6,14 +6,21 @@ export enum zhihuConstants {
 }
 
 export enum zhihuPeriodType {
+	// 小时榜
 	hour = 'hour',
+	// 日榜
 	day = 'day',
+	// 周榜
 	week = 'week'
 }
 
+// 潜力问题排序
 export enum zhihuSortType {
+	// 综合排序
 	all = 'all',
+	// 浏览增量
 	pv_incr_rate = 'pv_incr_rate',
+	// 回答增量
 	answer_incr_rate = 'answer_incr_rate'
 }
 
