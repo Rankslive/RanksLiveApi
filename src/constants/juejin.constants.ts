@@ -1,3 +1,5 @@
+import { filterObject } from '@/utils/helper'
+
 export const JuejinConstants = {
 	all: {
 		name: '综合',
@@ -12,7 +14,7 @@ export const JuejinConstants = {
 		category_id: '6809637767543259144'
 	},
 	android: {
-		name: 'Android',
+		name: 'Android/客户端',
 		category_id: '6809635626879549454'
 	},
 	ios: {
@@ -36,3 +38,8 @@ export const JuejinConstants = {
 		category_id: '6809637772874219534'
 	}
 }
+
+export const JuejinAuthorConstants = filterObject(JuejinConstants, [
+	'all',
+	'ios'
+])
