@@ -1,5 +1,5 @@
-import { ItHomeConstants } from '@/constants/it.home.constants'
+import { ItHomeConstants, ItHomeListRank } from '@/constants/it.home.constants'
 
-export type ItHomeType = (typeof ItHomeConstants)[keyof typeof ItHomeConstants]
+export type ItHomeType = (typeof ItHomeConstants)[keyof typeof ItHomeConstants]['type']
 
-export type ItHomeListType = 'day' | 'week' | 'month'
+export type ItHomeListRankType = keyof typeof ItHomeListRank

@@ -11,13 +11,13 @@ export const ItHomeConstants = {
 		name: '打分榜',
 		type: 3
 	}
-}
+} as const
 
-export enum ItHomeListTypeEnum {
-	day = 'day',
-	week = 'week',
-	month = 'month'
-}
+export const ItHomeListRank = {
+	day: { name: '日榜', value: 'day' },
+	week: { name: '周榜', value: 'week' },
+	month: { name: '月榜', value: 'month' }
+} as const
 
 export const ItHomeList = {
 	day: [
