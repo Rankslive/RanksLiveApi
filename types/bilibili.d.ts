@@ -1,3 +1,4 @@
-import { BiliBiliRankType } from '@/constants/bilibili.constants'
+import { BiliBiliRank } from '@/constants/bilibili.constants'
 
-export type BiliBiliSeasonType = BiliBiliRankType[keyof typeof BiliBiliRankType]
+export type BiliBiliRankType = keyof typeof BiliBiliRank
+export type BiliBiliSeasonType = (typeof BiliBiliRank)[keyof typeof BiliBiliRank]['value']
