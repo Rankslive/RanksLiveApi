@@ -1,6 +1,4 @@
-import { NeteaseChannel } from '../../types/netease'
-
-export const NeteaseConstants: NeteaseChannel = {
+export const NeteaseConstants = {
 	surge: { id: 19723756, name: '飙升榜' },
 	new: { id: 3779629, name: '新歌榜' },
 	original: { id: 2884035, name: '原创榜' },
@@ -62,4 +60,4 @@ export const NeteaseConstants: NeteaseChannel = {
 	europe_r_b: { id: 12225155968, name: '欧美R&amp;B榜' },
 	black_glue_vip_limit: { id: 12344472377, name: '黑胶VIP限免榜' },
 	geely: { id: 12717025277, name: '吉利车友爱听榜' }
-}
+} as const

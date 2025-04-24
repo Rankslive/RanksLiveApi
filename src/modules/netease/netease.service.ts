@@ -3,15 +3,16 @@ import request from '@/utils/request'
 import { NeteaseCrypto } from '@/utils/netease.crypto'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { NeteaseChannelType } from '../../../types/netease'
+import { ResponseData } from '../../../types/response.data'
 
 @Injectable()
 export class NeteaseService {
-	async getRankList(channel: NeteaseChannelType) {
+	async getRankList(channel: NeteaseChannelType): Promise<ResponseData[] & []> {
 		const { data } = await request({
 			method: 'post',
 			url: 'https://music.163.com/weapi/v6/playlist/detail',
 			params: NeteaseCrypto.encrypt({
-				id: channel.id,
+				id: channel,
 				n: 100,
 				csrf_token: ''
 			}),

@@ -1,8 +1,3 @@
-export interface NeteaseChannelType {
-	id: number
-	name: string
-}
+import { NeteaseConstants } from '@/constants/netease.constants'
 
-export interface NeteaseChannel {
-	[key: string]: NeteaseChannelType
-}
+export type NeteaseChannelType = (typeof NeteaseConstants)[keyof typeof NeteaseConstants]['id']
