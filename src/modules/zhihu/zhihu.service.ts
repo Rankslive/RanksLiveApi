@@ -3,7 +3,7 @@ import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import dayjs from 'dayjs'
-import { DomainTypes, PeriodType, SortType, zhihuSubScenesType } from '../../../types/zhihu'
+import { DomainValueType, PeriodType, SortType, zhihuSubScenesType } from '../../../types/zhihu'
 
 @Injectable()
 export class ZhihuService {
@@ -71,7 +71,7 @@ export class ZhihuService {
 	/**
 	 * 获取知乎创作热榜
 	 */
-	async getZhihuCreatorRankList(domain: DomainTypes, period: PeriodType): Promise<ResponseData[] & []> {
+	async getZhihuCreatorRankList(domain: DomainValueType, period: PeriodType): Promise<ResponseData[] & []> {
 		const { data } = await request({
 			method: 'get',
 			url: 'https://www.zhihu.com/api/v4/creators/rank/hot',
@@ -102,7 +102,7 @@ export class ZhihuService {
 	/**
 	 * 获取知乎潜力问题
 	 */
-	async getZhihuPotentialRankList(domain: DomainTypes, sortType: SortType): Promise<ResponseData[] & []> {
+	async getZhihuPotentialRankList(domain: DomainValueType, sortType: SortType): Promise<ResponseData[] & []> {
 		const { data } = await request({
 			method: 'get',
 			url: 'https://www.zhihu.com/api/v4/creators/rank/potential',

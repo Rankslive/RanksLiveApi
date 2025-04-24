@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger'
+import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { ZhihuService } from '@/modules/zhihu/zhihu.service'
-import { zhihuConstants, zhihuCreatorDomainType, zhihuPeriodType, zhihuSortType } from '@/constants/zhihu.constants'
+import { zhihuConstants, zhihuCreatorDomain } from '@/constants/zhihu.constants'
 import { ZhiHuHotQuestionDto, ZhiHuPotentialQuestionDto } from '@/modules/zhihu/zhihu.dto'
 
 @Controller('zhihu')
@@ -29,41 +29,15 @@ export class ZhihuController {
 
 	@Get('hot/question/:domain/:period')
 	@ApiOperation({ summary: '获取知乎近期热点' })
-	@ApiParam({
-		name: 'domain',
-		enum: Object.keys(zhihuCreatorDomainType),
-		description: '类型',
-		example: 'all',
-		required: true
-	})
-	@ApiParam({
-		name: 'period',
-		enum: Object.keys(zhihuPeriodType),
-		description: '热点榜单类型',
-		required: true
-	})
 	async getZhiHuHotQuestion(@Param() params: ZhiHuHotQuestionDto) {
 		const { domain, period } = params
-		return await this.ZhihuService.getZhihuCreatorRankList(zhihuCreatorDomainType[domain], period)
+		return await this.ZhihuService.getZhihuCreatorRankList(zhihuCreatorDomain[domain]['value'], period)
 	}
 
 	@Get('potential/question/:domain/:sortType')
 	@ApiOperation({ summary: '获取知乎潜力问题' })
-	@ApiParam({
-		name: 'domain',
-		enum: Object.keys(zhihuCreatorDomainType),
-		description: '类型',
-		example: 'all',
-		required: true
-	})
-	@ApiParam({
-		name: 'sortType',
-		enum: Object.keys(zhihuSortType),
-		description: '潜力问题排序方法',
-		required: true
-	})
 	async getZhiHuPotentialQuestion(@Param() params: ZhiHuPotentialQuestionDto) {
 		const { domain, sortType } = params
-		return await this.ZhihuService.getZhihuPotentialRankList(zhihuCreatorDomainType[domain], sortType)
+		return await this.ZhihuService.getZhihuPotentialRankList(zhihuCreatorDomain[domain]['value'], sortType)
 	}
 }
