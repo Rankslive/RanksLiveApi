@@ -21,5 +21,4 @@ export class YqqController {
 		const { type } = param
 		return await this.YqqService.getRanksList(YQqConstants[type]['value'])
 	}
-
 }

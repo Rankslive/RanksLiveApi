@@ -1,6 +1,6 @@
 import { AcfunChannel } from '../../types/acfun'
 
-export const AcfunConstants: AcfunChannel = {
+export const AcfunConstants = {
 	all: { name: '综合榜单', channelId: '', subChannelId: '' },
 	drama: { name: '番剧', channelId: 155, subChannelId: '' },
 	drama_tv: { name: '番剧 · TV动画', channelId: 155, subChannelId: 67 },
@@ -82,4 +82,4 @@ export const AcfunConstants: AcfunChannel = {
 	article_life: { name: '文章 · 生活', channelId: 63, subChannelId: 73 },
 	article_game: { name: '文章 · 游戏', channelId: 63, subChannelId: 164 },
 	article_advertisement: { name: '文章 · 广而告之', channelId: 63, subChannelId: 76 }
-}
+} as const
