@@ -1,8 +1,8 @@
 import { WeReadConstants } from '@/constants/we.read.constants'
 
-export type WeReadCategoryType = WeReadConstants[keyof typeof WeReadConstants]
+export type WeReadCategoryType = (typeof WeReadConstants)[keyof typeof WeReadConstants]['value']
 
-export interface WeReadRankUrl {
+export interface IWeReadRankUrl {
 	surge: string // 飙升榜
 	hotSearch: string // 热搜榜
 	newBook: string // 新书榜

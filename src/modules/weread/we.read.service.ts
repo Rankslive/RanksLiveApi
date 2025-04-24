@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { getWeReadID } from '@/utils/we.read.id'
-import { WeReadCategoryType, WeReadRankUrl } from '../../../types/we.read'
+import { IWeReadRankUrl, WeReadCategoryType } from '../../../types/we.read'
 
-const rankUrl: WeReadRankUrl = {
+const rankUrl: IWeReadRankUrl = {
 	// 飙升榜
 	surge: 'https://weread.qq.com/web/bookListInCategory/rising',
 	// 热搜榜
@@ -24,7 +24,6 @@ const rankUrl: WeReadRankUrl = {
 @Injectable()
 export class WeReadService {
 	async getRankList(type: WeReadCategoryType) {
-		console.log(rankUrl[type])
 		const { data } = await request({
 			method: 'get',
 			url: rankUrl[type],
