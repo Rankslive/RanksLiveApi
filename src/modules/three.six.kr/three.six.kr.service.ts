@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
-import { ThreeSixKr } from '../../../types/three.six.kr'
+import { ThreeSixKrType } from '../../../types/three.six.kr'
 import { ThreeSixKrConstants } from '@/constants/three.six.kr.constants'
 
 @Injectable()
 export class ThreeSixKrService {
-	async getHotRankList(type: ThreeSixKr) {
+	async getHotRankList(type: ThreeSixKrType) {
 		const { data } = await request({
 			method: 'post',
 			url: `https://gateway.36kr.com/api/mis/nav/home/nav/rank/${type}`,

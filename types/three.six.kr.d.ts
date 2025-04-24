@@ -1,9 +1,3 @@
-export type ThreeSixKr = 'hot' | 'video' | 'comment' | 'collect'
+import { ThreeSixKrConstants } from '@/constants/three.six.kr.constants'
 
-export interface ThreeSixKrType {
-	[key: string]: {
-		name: string
-		type: ThreeSixKr
-		list: string
-	}
-}
+export type ThreeSixKrType = (typeof ThreeSixKrConstants)[keyof typeof ThreeSixKrConstants]['value']

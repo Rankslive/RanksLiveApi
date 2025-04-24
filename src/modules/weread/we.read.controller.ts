@@ -15,5 +15,4 @@ export class WeReadController {
 		const { type } = param
 		return await this.WeReadService.getRankList(WeReadConstants[type]['value'])
 	}
-
 }

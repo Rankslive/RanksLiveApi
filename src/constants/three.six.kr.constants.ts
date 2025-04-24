@@ -1,24 +1,22 @@
-import { ThreeSixKrType } from '../../types/three.six.kr'
-
-export const ThreeSixKrConstants: ThreeSixKrType = {
+export const ThreeSixKrConstants = {
 	hot: {
 		name: '人气榜',
-		type: 'hot',
+		value: 'hot',
 		list: 'hotRankList'
 	},
 	video: {
 		name: '视频榜',
-		type: 'video',
+		value: 'video',
 		list: 'videoList'
 	},
 	comment: {
 		name: '热议榜',
-		type: 'comment',
+		value: 'comment',
 		list: 'remarkList'
 	},
 	collect: {
 		name: '收藏榜',
-		type: 'collect',
+		value: 'collect',
 		list: 'collectList'
 	}
-}
+} as const
