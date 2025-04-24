@@ -6,7 +6,6 @@ import { AcfunChannelType } from '../../../types/acfun'
 @Injectable()
 export class AcfunService {
 	async getRankList(channel: AcfunChannelType) {
-		console.log(channel)
 		const { data } = await request({
 			method: 'get',
 			url: 'https://www.acfun.cn/rest/pc-direct/rank/channel',
