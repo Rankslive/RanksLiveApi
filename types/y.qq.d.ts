@@ -1,6 +1,6 @@
 import { YQqConstants } from '@/constants/y.qq.constants'
 
-export type YQqTopType = (typeof YQqConstants)[keyof typeof YQqConstants]
+export type YQqTopType = (typeof YQqConstants)[keyof typeof YQqConstants]['value']
 
 export interface RankListItem {
 	title: string
