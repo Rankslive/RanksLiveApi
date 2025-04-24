@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { DoubanConstants } from '@/constants/douban.constants'
+import { douBanType } from '../../../types/douban'
 
 // 数据源 https://m.douban.com/home_guide
 
@@ -12,7 +13,7 @@ export class DoubanService {
 	 * 数据来源 https://m.douban.com/subject_collection/subject_real_time_hotest
 	 * @param type
 	 */
-	async getRealRankList(type: keyof typeof DoubanConstants) {
+	async getRealRankList(type: douBanType) {
 		const { data } = await request({
 			method: 'get',
 			url: `https://m.douban.com/rexxar/api/v2/subject_collection/${type}_real_time_hotest/items`,
