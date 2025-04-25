@@ -11,6 +11,7 @@ export class ZhiHuPotentialQuestionDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(zhihuCreatorDomain),
+			example: 'all',
 			'x-apifox-enum': transformConstantsToOptions(zhihuCreatorDomain)
 		}
 	})
@@ -22,6 +23,7 @@ export class ZhiHuPotentialQuestionDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(zhihuSort),
+			example: 'all',
 			'x-apifox-enum': transformConstantsToOptions(zhihuSort)
 		}
 	})
@@ -35,6 +37,7 @@ export class ZhiHuHotQuestionDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(zhihuCreatorDomain),
+			example: 'all',
 			'x-apifox-enum': transformConstantsToOptions(zhihuCreatorDomain)
 		}
 	})
@@ -46,6 +49,7 @@ export class ZhiHuHotQuestionDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(zhihuPeriod),
+			example: 'hour',
 			'x-apifox-enum': transformConstantsToOptions(zhihuPeriod)
 		}
 	})

@@ -11,6 +11,7 @@ export class AcfunParamDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(AcfunConstants),
+			example: 'all',
 			'x-apifox-enum': transformConstantsToOptions(AcfunConstants)
 		}
 	})

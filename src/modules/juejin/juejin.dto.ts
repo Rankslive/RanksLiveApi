@@ -11,6 +11,7 @@ export class JuejinArticleDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(JuejinConstants),
+			example: 'all',
 			'x-apifox-enum': transformConstantsToOptions(JuejinConstants)
 		}
 	})
@@ -24,6 +25,7 @@ export class JuejinAuthorDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(JuejinAuthorConstants),
+			example: 'backend',
 			'x-apifox-enum': transformConstantsToOptions(JuejinAuthorConstants)
 		}
 	})

@@ -11,6 +11,7 @@ export class YQqParamDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(YQqConstants),
+			example: 'surge',
 			'x-apifox-enum': transformConstantsToOptions(YQqConstants)
 		}
 	})

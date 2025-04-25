@@ -11,6 +11,7 @@ export class ThreeSixKrParamDto {
 		schema: {
 			type: 'string',
 			enum: Object.keys(ThreeSixKrConstants),
+			example: 'hot',
 			'x-apifox-enum': transformConstantsToOptions(ThreeSixKrConstants)
 		}
 	})
