@@ -40,4 +40,10 @@ export class ZhihuController {
 		const { domain, sortType } = params
 		return await this.ZhihuService.getZhihuPotentialRankList(zhihuCreatorDomain[domain]['value'], sortType)
 	}
+
+	@Get('daily')
+	@ApiOperation({ summary: '获取知乎日报' })
+	async getZhiHuDaily() {
+		return await this.ZhihuService.getZhihuDailyRank()
+	}
 }

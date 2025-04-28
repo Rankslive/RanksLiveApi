@@ -129,4 +129,31 @@ export class ZhihuService {
 			}
 		})
 	}
+
+	/**
+	 * 获取知乎日报
+	 */
+	async getZhihuDailyRank(): Promise<ResponseData[] & []> {
+		const { data } = await request({
+			method: 'get',
+			url: 'https://daily.zhihu.com/api/4/news/latest',
+			headers: {
+				Referer: 'https://daily.zhihu.com/api/4/news/latest',
+				Host: 'daily.zhihu.com'
+			}
+		})
+
+		if (!data) {
+			return []
+		}
+
+		return data.stories.map((item: any) => {
+			return {
+				title: item.title,
+				view: 0,
+				url: item.url,
+				create_time: 0
+			}
+		})
+	}
 }
