@@ -26,6 +26,7 @@ import { SspaiModule } from './modules/sspai/sspai.module'
 import { QqNewsModule } from './modules/qq.news/qq.news.module'
 import { DoubanModule } from './modules/douban/douban.module'
 import { AliyunModule } from './modules/aliyun/aliyun.module'
+import { HistoryModule } from './modules/history/history.module'
 
 @Module({
 	imports: [
@@ -54,7 +55,8 @@ import { AliyunModule } from './modules/aliyun/aliyun.module'
 		SspaiModule,
 		QqNewsModule,
 		DoubanModule,
-		AliyunModule
+		AliyunModule,
+		HistoryModule
 
 	],
 	providers: [
