@@ -27,6 +27,7 @@ import { QqNewsModule } from './modules/qq.news/qq.news.module'
 import { DoubanModule } from './modules/douban/douban.module'
 import { AliyunModule } from './modules/aliyun/aliyun.module'
 import { HistoryModule } from './modules/history/history.module'
+import { SinaNewsModule } from './modules/sina.news/sina.news.module'
 
 @Module({
 	imports: [
@@ -56,7 +57,8 @@ import { HistoryModule } from './modules/history/history.module'
 		QqNewsModule,
 		DoubanModule,
 		AliyunModule,
-		HistoryModule
+		HistoryModule,
+		SinaNewsModule
 
 	],
 	providers: [
