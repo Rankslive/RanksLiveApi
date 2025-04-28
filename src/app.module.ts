@@ -28,6 +28,7 @@ import { DoubanModule } from './modules/douban/douban.module'
 import { AliyunModule } from './modules/aliyun/aliyun.module'
 import { HistoryModule } from './modules/history/history.module'
 import { SinaNewsModule } from './modules/sina.news/sina.news.module'
+import { IfengNewsModule } from './modules/ifeng.news/ifeng.news.module'
 
 @Module({
 	imports: [
@@ -58,7 +59,8 @@ import { SinaNewsModule } from './modules/sina.news/sina.news.module'
 		DoubanModule,
 		AliyunModule,
 		HistoryModule,
-		SinaNewsModule
+		SinaNewsModule,
+		IfengNewsModule
 
 	],
 	providers: [
