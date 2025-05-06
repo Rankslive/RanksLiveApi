@@ -3,6 +3,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { JuejinService } from '@/modules/juejin/juejin.service'
 import { JuejinConstants } from '@/constants/juejin.constants'
 import { JuejinArticleDto, JuejinAuthorDto } from '@/modules/juejin/juejin.dto'
+import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 
 @Controller('juejin')
 @ApiTags('稀土掘金')
@@ -11,6 +12,7 @@ export class JuejinController {
 
 	@Get('article/:type')
 	@ApiOperation({ summary: '获取掘金文章榜' })
+	@ApiMaintainers('lonewolfyx')
 	async getJuejinArticleRank(@Param() param: JuejinArticleDto) {
 		const { type } = param
 		return await this.JuejinService.getArticleRankList(JuejinConstants[type]['category_id'])
@@ -18,18 +20,21 @@ export class JuejinController {
 
 	@Get('columns')
 	@ApiOperation({ summary: '获取掘金精选专栏榜' })
+	@ApiMaintainers('lonewolfyx')
 	async getJuejinHotColumns() {
 		return await this.JuejinService.getHotColumnsRankList()
 	}
 
 	@Get('collections')
 	@ApiOperation({ summary: '获取掘金推荐收藏集' })
+	@ApiMaintainers('lonewolfyx')
 	async getJuejinHotCollections() {
 		return await this.JuejinService.getHotCollectionsRankList()
 	}
 
 	@Get('authors/:type')
 	@ApiOperation({ summary: '获取掘金优质作者榜' })
+	@ApiMaintainers('lonewolfyx')
 	async getJuejinAuthorBackEnd(@Param() param: JuejinAuthorDto) {
 		const { type } = param
 		return await this.JuejinService.getAuthorRankList(JuejinConstants[type].category_id)
@@ -37,6 +42,7 @@ export class JuejinController {
 
 	@Get('article/collect/:type')
 	@ApiOperation({ summary: '获取掘金文章收藏榜' })
+	@ApiMaintainers('lonewolfyx')
 	async getJuejinArticleCollectedRank(@Param() param: JuejinArticleDto) {
 		const { type } = param
 		return await this.JuejinService.getArticleRankList(JuejinConstants[type].category_id, 'collect')

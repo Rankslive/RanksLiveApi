@@ -2,6 +2,7 @@ import { Controller, Get, Query } from '@nestjs/common'
 import { CsdnService } from './csdn.service'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { CsdnConstants } from '@/constants/csdn.constants'
+import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 
 @Controller('csdn')
 @ApiTags('CSDN')
@@ -10,12 +11,14 @@ export class CsdnController {
 
 	@Get('article/hot-rank')
 	@ApiOperation({ summary: '获取CSDN全站综合热榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleHotRank() {
 		return await this.csdnService.getArticleHotRank()
 	}
 
 	@Get('article/hot-channel-rank')
 	@ApiOperation({ summary: '获取CSDN领域内容榜' })
+	@ApiMaintainers('ffgenius')
 	async getAreaArticleRank(@Query('type') type: string) {
 		const child_channel = CsdnConstants[type]
 		if (!child_channel) {
@@ -26,54 +29,63 @@ export class CsdnController {
 
 	@Get('article/pay-column-rank')
 	@ApiOperation({ summary: '获取CSDN热门专栏榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticlePayColumnRank() {
 		return await this.csdnService.getArticlePayColumnRank()
 	}
 
 	@Get('author/author-rank')
 	@ApiOperation({ summary: '获取CSDN新晋作者榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleAuthorRank() {
 		return await this.csdnService.getArticleAuthorRank('new_author')
 	}
 
 	@Get('author/weekly-author-rank')
 	@ApiOperation({ summary: '获取CSDN作者周榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleWeeklyAuthorRank() {
 		return await this.csdnService.getArticleAuthorRank('weekly_author')
 	}
 
 	@Get('author/total-author-rank')
 	@ApiOperation({ summary: '获取CSDN作者总榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleTotalAuthorRank() {
 		return await this.csdnService.getArticleAuthorRank('total_author')
 	}
 
 	@Get('author/monthly-influence')
 	@ApiOperation({ summary: '获取CSDN原力榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleMonthlyInfluenceRank() {
 		return await this.csdnService.getArticleAuthorRank('monthly_influence')
 	}
 
 	@Get('author/annual-influence')
 	@ApiOperation({ summary: '获取CSDN原力年榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleAnnualInfluenceRank() {
 		return await this.csdnService.getArticleAuthorRank('annual_influence')
 	}
 
 	@Get('author/new-user-influence')
 	@ApiOperation({ summary: '获取CSDN新人榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleNewUserInfluenceRank() {
 		return await this.csdnService.getArticleAuthorRank('new_user_influence')
 	}
 
 	@Get('author/leader-rank')
 	@ApiOperation({ summary: '获取CSDN领军人物' })
+	@ApiMaintainers('ffgenius')
 	async getArticleLeaderRank() {
 		return await this.csdnService.getArticleAuthorRank('leader')
 	}
 
 	@Get('author/history-rank')
 	@ApiOperation({ summary: '获取CSDN历史贡献榜' })
+	@ApiMaintainers('ffgenius')
 	async getArticleHistoryRank() {
 		return await this.csdnService.getArticleHistoryRank()
 	}
