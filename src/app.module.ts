@@ -29,6 +29,7 @@ import { AliyunModule } from './modules/aliyun/aliyun.module'
 import { HistoryModule } from './modules/history/history.module'
 import { SinaNewsModule } from './modules/sina.news/sina.news.module'
 import { IfengNewsModule } from './modules/ifeng.news/ifeng.news.module'
+import { OschinaModule } from './modules/oschina/oschina.module'
 
 @Module({
 	imports: [
@@ -60,7 +61,8 @@ import { IfengNewsModule } from './modules/ifeng.news/ifeng.news.module'
 		AliyunModule,
 		HistoryModule,
 		SinaNewsModule,
-		IfengNewsModule
+		IfengNewsModule,
+		OschinaModule
 
 	],
 	providers: [
