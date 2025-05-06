@@ -1,4 +1,4 @@
-import { ItHomeConstants, ItHomeListRank } from '@/constants/it.home.constants'
+import { ItHomeConstants, ItHomeListRank } from '@/modules/it.home/constants/it.home.constants'
 
 export type ItHomeType = (typeof ItHomeConstants)[keyof typeof ItHomeConstants]['type']
 

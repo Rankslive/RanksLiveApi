@@ -1,4 +1,4 @@
-import { NeteaseConstants } from '@/constants/netease.constants'
+import { NeteaseConstants } from '@/modules/netease/constants/netease.constants'
 import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { IsEnum } from 'class-validator'

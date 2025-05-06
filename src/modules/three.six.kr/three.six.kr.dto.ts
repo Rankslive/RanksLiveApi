@@ -1,4 +1,4 @@
-import { ThreeSixKrConstants } from '@/constants/three.six.kr.constants'
+import { ThreeSixKrConstants } from '@/modules/three.six.kr/constants/three.six.kr.constants'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'

@@ -1,7 +1,7 @@
-import { AcfunChanelType } from '../../../types/acfun'
+import { AcfunChanelType } from './types/acfun'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
-import { AcfunConstants } from '@/constants/acfun.constants'
+import { AcfunConstants } from '@/modules/acfun/constants/acfun.constants'
 import { validateMessage } from '@/utils/validation.prompts'
 import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
 

@@ -1,7 +1,7 @@
-import { zhihuCreatorDomain, zhihuPeriod, zhihuSort } from '@/constants/zhihu.constants'
+import { zhihuCreatorDomain, zhihuPeriod, zhihuSort } from '@/modules/zhihu/constants/zhihu.constants'
 import { IsEnum } from 'class-validator'
 import { validateMessage } from '@/utils/validation.prompts'
-import { DomainType, PeriodType, SortType } from '../../../types/zhihu'
+import { DomainType, PeriodType, SortType } from './types/zhihu'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
 

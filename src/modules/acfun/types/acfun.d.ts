@@ -1,4 +1,4 @@
-import { AcfunConstants } from '@/constants/acfun.constants'
+import { AcfunConstants } from '@/modules/acfun/constants/acfun.constants'
 
 export interface IAcfunChannel {
 	name: string

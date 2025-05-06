@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
-import { ItHomeListRankType, ItHomeType } from '../../../types/it.home'
-import { ItHomeList } from '@/constants/it.home.constants'
+import { ItHomeListRankType, ItHomeType } from './types/it.home'
+import { ItHomeList } from '@/modules/it.home/constants/it.home.constants'
 import { ResponseData } from '../../../types/response.data'
 
 @Injectable()

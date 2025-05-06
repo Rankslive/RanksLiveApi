@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { WeReadService } from '@/modules/weread/we.read.service'
-import { WeReadConstants } from '@/constants/we.read.constants'
+import { WeReadConstants } from '@/modules/weread/constants/we.read.constants'
 import { WeReadParamDto } from '@/modules/weread/we.read.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

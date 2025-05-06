@@ -1,4 +1,4 @@
-import { WeReadConstants } from '@/constants/we.read.constants'
+import { WeReadConstants } from '@/modules/weread/constants/we.read.constants'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'

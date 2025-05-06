@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { ZhihuService } from '@/modules/zhihu/zhihu.service'
-import { zhihuConstants, zhihuCreatorDomain } from '@/constants/zhihu.constants'
+import { zhihuConstants, zhihuCreatorDomain } from '@/modules/zhihu/constants/zhihu.constants'
 import { ZhiHuHotQuestionDto, ZhiHuPotentialQuestionDto } from '@/modules/zhihu/zhihu.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

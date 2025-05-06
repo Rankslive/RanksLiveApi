@@ -1,4 +1,4 @@
-import { DoubanConstants } from '@/constants/douban.constants'
+import { DoubanConstants } from '@/modules/douban/constants/douban.constants'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'

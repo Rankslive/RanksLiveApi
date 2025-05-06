@@ -1,6 +1,6 @@
-import { JuejinAuthorConstants, JuejinConstants } from '@/constants/juejin.constants'
+import { JuejinAuthorConstants, JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
 import { IsEnum } from 'class-validator'
-import { JueJinType } from '../../../types/juejin'
+import { JueJinType } from './types/juejin'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'
 import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'

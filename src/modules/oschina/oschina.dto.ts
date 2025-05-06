@@ -1,7 +1,7 @@
-import { OschinaGroupType } from '../../../types/oschina'
+import { OschinaGroupType } from './types/oschina'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
-import { oschinaGroups } from '@/constants/oschina.constants'
+import { oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
 import { validateMessage } from '@/utils/validation.prompts'
 import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
 

@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { ThreeSixKrService } from '@/modules/three.six.kr/three.six.kr.service'
-import { ThreeSixKrConstants } from '@/constants/three.six.kr.constants'
+import { ThreeSixKrConstants } from '@/modules/three.six.kr/constants/three.six.kr.constants'
 import { ThreeSixKrParamDto } from '@/modules/three.six.kr/three.six.kr.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

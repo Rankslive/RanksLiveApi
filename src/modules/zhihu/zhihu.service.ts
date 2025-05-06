@@ -3,7 +3,7 @@ import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import dayjs from 'dayjs'
-import { DomainValueType, PeriodType, SortType, zhihuSubScenesType } from '../../../types/zhihu'
+import { DomainValueType, PeriodType, SortType, zhihuSubScenesType } from './types/zhihu'
 
 @Injectable()
 export class ZhihuService {

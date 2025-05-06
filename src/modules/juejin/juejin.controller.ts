@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { JuejinService } from '@/modules/juejin/juejin.service'
-import { JuejinConstants } from '@/constants/juejin.constants'
+import { JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
 import { JuejinArticleDto, JuejinAuthorDto } from '@/modules/juejin/juejin.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

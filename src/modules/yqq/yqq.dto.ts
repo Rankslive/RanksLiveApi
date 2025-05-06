@@ -1,4 +1,4 @@
-import { YQqConstants } from '@/constants/y.qq.constants'
+import { YQqConstants } from '@/modules/yqq/constants/y.qq.constants'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'

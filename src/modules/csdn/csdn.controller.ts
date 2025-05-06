@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common'
 import { CsdnService } from './csdn.service'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
-import { CsdnConstants } from '@/constants/csdn.constants'
+import { CsdnConstants } from '@/modules/csdn/constants/csdn.constants'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 
 @Controller('csdn')

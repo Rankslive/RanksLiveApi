@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
-import { DoubanConstants } from '@/constants/douban.constants'
-import { douBanType } from '../../../types/douban'
+import { DoubanConstants } from '@/modules/douban/constants/douban.constants'
+import { douBanType } from './types/douban'
 
 // 数据源 https://m.douban.com/home_guide
 

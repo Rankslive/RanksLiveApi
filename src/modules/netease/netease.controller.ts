@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { NeteaseService } from '@/modules/netease/netease.service'
-import { NeteaseConstants } from '@/constants/netease.constants'
+import { NeteaseConstants } from '@/modules/netease/constants/netease.constants'
 import { NeteaseParamDto } from '@/modules/netease/netease.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

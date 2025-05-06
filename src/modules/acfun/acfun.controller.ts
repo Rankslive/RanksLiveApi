@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { AcfunService } from '@/modules/acfun/acfun.service'
-import { AcfunConstants } from '@/constants/acfun.constants'
+import { AcfunConstants } from '@/modules/acfun/constants/acfun.constants'
 import { AcfunParamDto } from '@/modules/acfun/acfun.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

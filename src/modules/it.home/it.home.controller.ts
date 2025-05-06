@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { ItHomeService } from '@/modules/it.home/it.home.service'
-import { ItHomeConstants } from '@/constants/it.home.constants'
+import { ItHomeConstants } from '@/modules/it.home/constants/it.home.constants'
 import { iTHomeParamDto } from '@/modules/it.home/it.home.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

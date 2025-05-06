@@ -1,4 +1,4 @@
-import { AcfunChannel } from '../../types/acfun'
+import { AcfunChannel } from '../types/acfun'
 
 export const AcfunConstants = {
 	all: { name: '综合榜单', channelId: '', subChannelId: '' },

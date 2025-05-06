@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
-import { ThreeSixKrType } from '../../../types/three.six.kr'
-import { ThreeSixKrConstants } from '@/constants/three.six.kr.constants'
+import { ThreeSixKrType } from './types/three.six.kr'
+import { ThreeSixKrConstants } from '@/modules/three.six.kr/constants/three.six.kr.constants'
 
 @Injectable()
 export class ThreeSixKrService {

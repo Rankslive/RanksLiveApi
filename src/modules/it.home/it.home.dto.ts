@@ -2,7 +2,7 @@ import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decora
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { IsEnum } from 'class-validator'
 import { validateMessage } from '@/utils/validation.prompts'
-import { ItHomeConstants, ItHomeListRank } from '@/constants/it.home.constants'
+import { ItHomeConstants, ItHomeListRank } from '@/modules/it.home/constants/it.home.constants'
 
 export class iTHomeParamDto {
 	@ApiPropertyExtend({

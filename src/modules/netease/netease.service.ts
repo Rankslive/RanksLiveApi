@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { NeteaseCrypto } from '@/utils/netease.crypto'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
-import { NeteaseChannelType } from '../../../types/netease'
+import { NeteaseChannelType } from './types/netease'
 import { ResponseData } from '../../../types/response.data'
 
 @Injectable()

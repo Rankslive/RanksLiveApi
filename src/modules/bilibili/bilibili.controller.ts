@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { BilibiliService } from '@/modules/bilibili/bilibili.service'
-import { BiliBiliRank, useBaseRank, useSeasonRank } from '@/constants/bilibili.constants'
+import { BiliBiliRank, useBaseRank, useSeasonRank } from '@/modules/bilibili/constants/bilibili.constants'
 import { BiliBiliRankParamDto } from '@/modules/bilibili/bilibili.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 

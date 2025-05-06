@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
-import { IAcfunChannel } from '../../../types/acfun'
+import { IAcfunChannel } from './types/acfun'
 import { ResponseData } from '../../../types/response.data'
 
 @Injectable()

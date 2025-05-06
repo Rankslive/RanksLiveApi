@@ -1,5 +1,5 @@
-import { sinaNewsConstants } from '@/constants/sina.news.constants'
-import { sinaNewsType } from '../../../types/sina.news'
+import { sinaNewsConstants } from '@/modules/sina.news/constants/sina.news.constants'
+import { sinaNewsType } from './types/sina.news'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'

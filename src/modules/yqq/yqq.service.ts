@@ -3,7 +3,7 @@ import request from '@/utils/request'
 import { sign } from '@/utils/yqq/sign'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
-import { RankListItem, YQqTopType } from '../../../types/y.qq'
+import { RankListItem, YQqTopType } from './types/y.qq'
 
 @Injectable()
 export class YqqService {

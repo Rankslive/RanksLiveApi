@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { sinaNewsType } from '../../../types/sina.news'
+import { sinaNewsType } from './types/sina.news'
 import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
 

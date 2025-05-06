@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { DoubanService } from '@/modules/douban/douban.service'
-import { DoubanConstants } from '@/constants/douban.constants'
+import { DoubanConstants } from '@/modules/douban/constants/douban.constants'
 import { DouBanParamDto } from '@/modules/douban/douban.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 
