@@ -30,6 +30,7 @@ import { HistoryModule } from './modules/history/history.module'
 import { SinaNewsModule } from './modules/sina.news/sina.news.module'
 import { IfengNewsModule } from './modules/ifeng.news/ifeng.news.module'
 import { OschinaModule } from './modules/oschina/oschina.module'
+import { CommonModule } from './common/module/common.module'
 
 @Module({
 	imports: [
@@ -37,6 +38,7 @@ import { OschinaModule } from './modules/oschina/oschina.module'
 			isGlobal: true,
 			envFilePath: [`.env.${process.env.NODE_ENV}`]
 		}),
+		CommonModule,
 
 		BaiduModule,
 		HupuModule,
