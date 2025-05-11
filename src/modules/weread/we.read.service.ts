@@ -3,6 +3,7 @@ import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { getWeReadID } from '@/utils/we.read.id'
 import { IWeReadRankUrl, WeReadCategoryType } from './types/we.read'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 const rankUrl: IWeReadRankUrl = {
 	// 飙升榜
@@ -23,8 +24,10 @@ const rankUrl: IWeReadRankUrl = {
 
 @Injectable()
 export class WeReadService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRankList(type: WeReadCategoryType) {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: rankUrl[type],
 			params: {

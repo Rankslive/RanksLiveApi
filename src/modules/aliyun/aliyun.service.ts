@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import dayjs from 'dayjs'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class AliyunService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRealArticleList() {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://developer.aliyun.com/developer/api/index/202109/listIndexItemFeed',
 			params: {

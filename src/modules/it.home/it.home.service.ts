@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { ItHomeListRankType, ItHomeType } from './types/it.home'
 import { ItHomeList } from '@/modules/it.home/constants/it.home.constants'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class ItHomeService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRankList(rankType: ItHomeType, type: ItHomeListRankType): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: `https://napi.ithome.com/api/news/gethotbang/${rankType}`,
 			headers: {

@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { uuid } from '@/utils/helper'
 import dayjs from 'dayjs'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class IfengNewsService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getHotNewsRank() {
 		const uid = uuid().split('-').join('')
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://nine.ifeng.com/hotspotlistv2',
 			params: {

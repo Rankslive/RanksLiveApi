@@ -1,17 +1,19 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
 import { encodeRid } from '@/utils/bilibili/rid'
 import { BiliBiliSeasonType } from './types/bilibili'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class BilibiliService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	private async sendRequest(url: string, queryParams: any) {
 		try {
 			const query = await encodeRid(queryParams)
 
-			const { data } = await request({
+			const { data } = await this.httpClientService.request({
 				method: 'get',
 				url,
 				headers: {

@@ -1,14 +1,16 @@
 import { Injectable } from '@nestjs/common'
 import { ResponseData } from '../../../types/response.data'
-import request from '@/utils/request'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class DouyinService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	/**
 	 * 获取热榜数据
 	 */
 	async getHotRankList(): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			// https://aweme.snssdk.com/aweme/v1/hot/search/list/
 			url: 'https://www.iesdouyin.com/web/api/v2/hotsearch/billboard/word/',

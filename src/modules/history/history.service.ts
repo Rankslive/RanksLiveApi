@@ -1,15 +1,17 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
 import dayjs from 'dayjs'
 import { load } from 'cheerio'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class HistoryService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getHistory(month: string): Promise<ResponseData[] & []> {
 		const day = dayjs().format('MMDD')
 
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: `https://baike.baidu.com/cms/home/eventsOnHistory/${month}.json`,
 			params: {

@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { ThreeSixKrType } from './types/three.six.kr'
 import { ThreeSixKrConstants } from '@/modules/three.six.kr/constants/three.six.kr.constants'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class ThreeSixKrService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getHotRankList(type: ThreeSixKrType) {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: `https://gateway.36kr.com/api/mis/nav/home/nav/rank/${type}`,
 			data: {

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 const gentWebId = (): string => {
 	const generateRandomPart = (e: number) => (e ^ ((Math.random() * 16) >> (e / 4))).toString(10)
@@ -12,13 +12,15 @@ const gentWebId = (): string => {
 
 @Injectable()
 export class JuejinService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	/**
 	 * 获取掘金文章、收藏榜单
 	 * @param category_id
 	 * @param type
 	 */
 	async getArticleRankList(category_id: string, type: 'hot' | 'collect' = 'hot'): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://api.juejin.cn/content_api/v1/content/article_rank',
 			params: {
@@ -51,7 +53,7 @@ export class JuejinService {
 	 * 获取掘金精选专栏榜单
 	 */
 	async getHotColumnsRankList(): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://api.juejin.cn/content_api/v1/column/selected_rank',
 			params: {
@@ -87,7 +89,7 @@ export class JuejinService {
 	 * 获取掘金推荐收藏集
 	 */
 	async getHotCollectionsRankList(): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://api.juejin.cn/interact_api/v2/collectionset/collection_recommend_rank',
 			params: {
@@ -128,7 +130,7 @@ export class JuejinService {
 	 * @param category_id
 	 */
 	async getAuthorRankList(category_id: string) {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://api.juejin.cn/user_api/v1/quality_user/rank',
 			params: {

@@ -1,17 +1,19 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class CsdnService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	/**
 	 * 获取CSDN全站综合热榜
 	 */
 	async getArticleHotRank(): Promise<ResponseData[]> {
 		const {
 			data: { data }
-		} = await request({
+		} = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://blog.csdn.net/phoenix/web/blog/hot-rank?page=0&pageSize=25&type=',
 			headers: {
@@ -32,7 +34,7 @@ export class CsdnService {
 	async getAreaArticleRank(type: string): Promise<ResponseData[]> {
 		const {
 			data: { data }
-		} = await request({
+		} = await this.httpClientService.request({
 			method: 'get',
 			url: `https://blog.csdn.net/phoenix/web/blog/hot-rank?page=0&pageSize=25&child_channel=${type}&type=`,
 			headers: {
@@ -56,7 +58,7 @@ export class CsdnService {
 			data: {
 				data: { payColumnRankListItemList }
 			}
-		} = await request({
+		} = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://blog.csdn.net/phoenix/web/blog/pay-column-rank?page=0&pageSize=20',
 			headers: {
@@ -79,7 +81,7 @@ export class CsdnService {
 			data: {
 				data: { list }
 			}
-		} = await request({
+		} = await this.httpClientService.request({
 			method: 'get',
 			url: `https://blog.csdn.net/phoenix/web/v2/rank?page=1&pageSize=25&rankType=${type}`,
 			headers: {
@@ -102,7 +104,7 @@ export class CsdnService {
 			data: {
 				data: { allRankListItem }
 			}
-		} = await request({
+		} = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://blog.csdn.net/phoenix/web/blog/history-rank?page=0&pageSize=20',
 			headers: {
@@ -123,7 +125,7 @@ export class CsdnService {
 	 * 获取CSDN社区榜
 	 */
 	async getArticleCommunityRank(): Promise<ResponseData[]> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://bizapi.csdn.net/community-cloud/v1/rank/community?page=1&pageSize=25',
 			headers: {

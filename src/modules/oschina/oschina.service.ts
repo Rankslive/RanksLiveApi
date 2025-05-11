@@ -1,21 +1,23 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { OschinaGroupType } from './types/oschina'
 import { oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
 import dayjs from 'dayjs'
 import { type CheerioAPI, load } from 'cheerio'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 // 专区列表数据源：https://apiv1.oschina.net/oschinapi/circle/list
 
 @Injectable()
 export class OschinaService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	/**
 	 * 获取专区最新文章列表 · web 端版本
 	 * @param circle
 	 */
 	async getGroupsNewListByWeb(circle: OschinaGroupType): Promise<ResponseData[]> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://www.oschina.net/group/widgets/_entry_list',
 			params: {
@@ -51,7 +53,7 @@ export class OschinaService {
 	 * 获取专区最新文章列表 · 移动端版本
 	 */
 	async getGroupsNewListByMobile(circle: OschinaGroupType) {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://apiv1.oschina.net/oschinapi/circle/contentNewestList',
 			params: {

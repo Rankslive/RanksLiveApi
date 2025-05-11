@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class QqNewsService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRankHot() {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://i.news.qq.com/gw/event/pc_hot_ranking_list',
 			params: {

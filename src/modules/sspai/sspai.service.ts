@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class SspaiService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getHotRank() {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://sspai.com/api/v1/article/tag/page/get',
 			params: {

@@ -4,14 +4,17 @@ import { ResponseData } from '../../../types/response.data'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import dayjs from 'dayjs'
 import { DomainValueType, PeriodType, SortType, zhihuSubScenesType } from './types/zhihu'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class ZhihuService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	/**
 	 * 获取知乎热榜
 	 */
 	async getHotRankList(): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total',
 			params: {
@@ -39,7 +42,7 @@ export class ZhihuService {
 	}
 
 	async getZhihuNextRenderList(sub_scenes: zhihuSubScenesType): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://api.zhihu.com/next-render',
 			params: {
@@ -72,7 +75,7 @@ export class ZhihuService {
 	 * 获取知乎创作热榜
 	 */
 	async getZhihuCreatorRankList(domain: DomainValueType, period: PeriodType): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://www.zhihu.com/api/v4/creators/rank/hot',
 			params: {
@@ -103,7 +106,7 @@ export class ZhihuService {
 	 * 获取知乎潜力问题
 	 */
 	async getZhihuPotentialRankList(domain: DomainValueType, sortType: SortType): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://www.zhihu.com/api/v4/creators/rank/potential',
 			params: {
@@ -134,7 +137,7 @@ export class ZhihuService {
 	 * 获取知乎日报
 	 */
 	async getZhihuDailyRank(): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://daily.zhihu.com/api/4/news/latest',
 			headers: {

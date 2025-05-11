@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class ToutiaoService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getHotRankList(): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://www.toutiao.com/hot-event/hot-board/',
 			params: {

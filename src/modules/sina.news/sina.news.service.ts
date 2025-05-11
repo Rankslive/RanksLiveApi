@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common'
 import { sinaNewsType } from './types/sina.news'
-import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class SinaNewsService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getNewsRank(type: sinaNewsType): Promise<ResponseData[]> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://newsapp.sina.cn/api/hotlist',
 			params: {

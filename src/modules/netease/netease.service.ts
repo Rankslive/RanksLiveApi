@@ -1,14 +1,16 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { NeteaseCrypto } from '@/utils/netease.crypto'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { NeteaseChannelType } from './types/netease'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class NeteaseService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRankList(channel: NeteaseChannelType): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://music.163.com/weapi/v6/playlist/detail',
 			params: NeteaseCrypto.encrypt({

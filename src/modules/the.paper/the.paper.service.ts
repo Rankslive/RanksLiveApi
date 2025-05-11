@@ -1,11 +1,13 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class ThePaperService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRankHot() {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://cache.thepaper.cn/contentapi/wwwIndex/rightSidebar',
 			headers: {

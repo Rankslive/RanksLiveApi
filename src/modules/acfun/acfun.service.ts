@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { IAcfunChannel } from './types/acfun'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class AcfunService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getRankList(channel: IAcfunChannel): Promise<ResponseData[] & []> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://www.acfun.cn/rest/pc-direct/rank/channel',
 			params: {

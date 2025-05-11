@@ -1,14 +1,16 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { sign } from '@/utils/yqq/sign'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
 import { RankListItem, YQqTopType } from './types/y.qq'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class YqqService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getMusicTopList(): Promise<RankListItem[]> {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://u.y.qq.com/cgi-bin/musicu.fcg',
 			headers: {
@@ -81,7 +83,7 @@ export class YqqService {
 			}
 		}
 
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'post',
 			url: 'https://u6.y.qq.com/cgi-bin/musics.fcg',
 			params: {

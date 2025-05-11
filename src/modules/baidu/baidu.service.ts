@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 @Injectable()
 export class BaiduService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getBaiduHot(type: string): Promise<ResponseData[]> {
 		const result = await this.getData(type)
 
@@ -19,7 +21,7 @@ export class BaiduService {
 	}
 
 	private async getData(type: string) {
-		const content = await request({
+		const content = await this.httpClientService.request({
 			method: 'get',
 			url: `https://top.baidu.com/board?tab=${type}`,
 			headers: {
@@ -33,7 +35,7 @@ export class BaiduService {
 	}
 
 	async getBaiduTieBaDiscussionRank() {
-		const { data } = await request({
+		const { data } = await this.httpClientService.request({
 			method: 'get',
 			url: 'https://tieba.baidu.com/hottopic/browse/topicList',
 			headers: {

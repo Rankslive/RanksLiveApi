@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common'
 import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 type WeiboDataType = 'hot' | 'entertainment'
 
 @Injectable()
 export class WeiboService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	url = {
 		hot: 'https://weibo.com/ajax/side/hotSearch',
 		entertainment: 'https://weibo.com/ajax/statuses/entertainment'
@@ -25,7 +28,7 @@ export class WeiboService {
 	}
 
 	async getData(type: WeiboDataType) {
-		const result = await request({
+		const result = await this.httpClientService.request({
 			method: 'get',
 			url: this.url[type],
 			headers: {

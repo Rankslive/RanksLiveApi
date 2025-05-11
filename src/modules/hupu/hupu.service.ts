@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
+import { HttpClientService } from '@/common/service/http-client.service'
 
 const moduleName = {
 	basketball: '篮球热榜',
@@ -11,6 +11,8 @@ const moduleName = {
 
 @Injectable()
 export class HupuService {
+	constructor(private readonly httpClientService: HttpClientService) {}
+
 	async getHupuHot(type: 'basketball' | 'football' | 'street'): Promise<ResponseData[]> {
 		const data = await this.getData()
 		return data
@@ -24,7 +26,7 @@ export class HupuService {
 	}
 
 	async getData() {
-		const content = await request({
+		const content = await this.httpClientService.request({
 			method: 'get',
 			url: `https://www.hupu.com/`,
 			headers: {
