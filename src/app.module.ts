@@ -31,6 +31,7 @@ import { SinaNewsModule } from './modules/sina.news/sina.news.module'
 import { IfengNewsModule } from './modules/ifeng.news/ifeng.news.module'
 import { OschinaModule } from './modules/oschina/oschina.module'
 import { CommonModule } from './common/module/common.module'
+import { CloudTencentModule } from './modules/cloud.tencent/cloud.tencent.module'
 
 @Module({
 	imports: [
@@ -64,7 +65,8 @@ import { CommonModule } from './common/module/common.module'
 		HistoryModule,
 		SinaNewsModule,
 		IfengNewsModule,
-		OschinaModule
+		OschinaModule,
+		CloudTencentModule
 
 	],
 	providers: [
