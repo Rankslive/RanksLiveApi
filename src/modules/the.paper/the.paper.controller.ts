@@ -6,12 +6,12 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('the.paper')
 @ApiTags('澎湃新闻')
 export class ThePaperController {
-	constructor(private readonly thePaperService: ThePaperService) {}
+    constructor(private readonly thePaperService: ThePaperService) {}
 
-	@Get('hot')
-	@ApiOperation({ summary: '获取澎湃新闻 · 热榜' })
-	@ApiMaintainers('lonewolfyx')
-	async getRankHot() {
-		return await this.thePaperService.getRankHot()
-	}
+    @Get('hot')
+    @ApiOperation({ summary: '获取澎湃新闻 · 热榜' })
+    @ApiMaintainers('lonewolfyx')
+    async getRankHot() {
+        return await this.thePaperService.getRankHot()
+    }
 }

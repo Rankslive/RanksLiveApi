@@ -3,7 +3,7 @@ import { BilibiliController } from './bilibili.controller'
 import { BilibiliService } from './bilibili.service'
 
 @Module({
-	controllers: [BilibiliController],
-	providers: [BilibiliService]
+    controllers: [BilibiliController],
+    providers: [BilibiliService]
 })
 export class BilibiliModule {}

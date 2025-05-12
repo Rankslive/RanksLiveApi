@@ -5,16 +5,16 @@ import { validateMessage } from '@/utils/validation.prompts'
 import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
 
 export class YQqParamDto {
-	@ApiPropertyExtend({
-		description: '类型',
-		enum: Object.keys(YQqConstants),
-		schema: {
-			type: 'string',
-			enum: Object.keys(YQqConstants),
-			example: 'surge',
-			'x-apifox-enum': transformConstantsToOptions(YQqConstants)
-		}
-	})
-	@IsEnum(transformConstantsObjectToEnum(YQqConstants), { message: validateMessage('type') })
-	type: keyof typeof YQqConstants
+    @ApiPropertyExtend({
+        description: '类型',
+        enum: Object.keys(YQqConstants),
+        schema: {
+            type: 'string',
+            enum: Object.keys(YQqConstants),
+            example: 'surge',
+            'x-apifox-enum': transformConstantsToOptions(YQqConstants)
+        }
+    })
+    @IsEnum(transformConstantsObjectToEnum(YQqConstants), { message: validateMessage('type') })
+    type: keyof typeof YQqConstants
 }

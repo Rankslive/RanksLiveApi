@@ -3,7 +3,7 @@ import { JuejinController } from './juejin.controller'
 import { JuejinService } from './juejin.service'
 
 @Module({
-	controllers: [JuejinController],
-	providers: [JuejinService]
+    controllers: [JuejinController],
+    providers: [JuejinService]
 })
 export class JuejinModule {}

@@ -3,7 +3,7 @@ import { ThePaperController } from './the.paper.controller'
 import { ThePaperService } from './the.paper.service'
 
 @Module({
-	controllers: [ThePaperController],
-	providers: [ThePaperService]
+    controllers: [ThePaperController],
+    providers: [ThePaperService]
 })
 export class ThePaperModule {}

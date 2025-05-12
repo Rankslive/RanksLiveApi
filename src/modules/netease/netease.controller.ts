@@ -8,13 +8,13 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('netease')
 @ApiTags('网易云音乐')
 export class NeteaseController {
-	constructor(private readonly NeteaseService: NeteaseService) {}
+    constructor(private readonly NeteaseService: NeteaseService) {}
 
-	@Get('rank/:type')
-	@ApiOperation({ summary: '获取网易云音乐榜单' })
-	@ApiMaintainers('lonewolfyx')
-	async getSurgeRank(@Param() param: NeteaseParamDto) {
-		const { type } = param
-		return await this.NeteaseService.getRankList(NeteaseConstants[type]['id'])
-	}
+    @Get('rank/:type')
+    @ApiOperation({ summary: '获取网易云音乐榜单' })
+    @ApiMaintainers('lonewolfyx')
+    async getSurgeRank(@Param() param: NeteaseParamDto) {
+        const { type } = param
+        return await this.NeteaseService.getRankList(NeteaseConstants[type]['id'])
+    }
 }

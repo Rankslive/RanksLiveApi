@@ -6,13 +6,13 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('')
 @ApiTags('ApiHub')
 export class AppController {
-	@Get()
-	@ApiOperation({ summary: 'ApiHub' })
-	@ApiMaintainers('lonewolfyx')
-	getHello(): object {
-		return {
-			name: 'RanksLive ApiHub',
-			version: version
-		}
-	}
+    @Get()
+    @ApiOperation({ summary: 'ApiHub' })
+    @ApiMaintainers('lonewolfyx')
+    getHello(): object {
+        return {
+            name: 'RanksLive ApiHub',
+            version: version
+        }
+    }
 }

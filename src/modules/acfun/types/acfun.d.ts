@@ -1,13 +1,13 @@
 import { AcfunConstants } from '@/modules/acfun/constants/acfun.constants'
 
 export interface IAcfunChannel {
-	name: string
-	channelId: number | ''
-	subChannelId: number | ''
+    name: string
+    channelId: number | ''
+    subChannelId: number | ''
 }
 
 export interface AcfunChannel {
-	[key: string]: IAcfunChannel
+    [key: string]: IAcfunChannel
 }
 
 export type AcfunChanelType = keyof typeof AcfunConstants

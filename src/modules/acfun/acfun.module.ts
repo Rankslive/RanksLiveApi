@@ -3,7 +3,7 @@ import { AcfunController } from './acfun.controller'
 import { AcfunService } from './acfun.service'
 
 @Module({
-	controllers: [AcfunController],
-	providers: [AcfunService]
+    controllers: [AcfunController],
+    providers: [AcfunService]
 })
 export class AcfunModule {}

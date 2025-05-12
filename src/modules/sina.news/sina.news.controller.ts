@@ -7,13 +7,13 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('sina.news')
 @ApiTags('新浪新闻')
 export class SinaNewsController {
-	constructor(private readonly sinaNewsService: SinaNewsService) {}
+    constructor(private readonly sinaNewsService: SinaNewsService) {}
 
-	@Get('rank/:type')
-	@ApiOperation({ summary: '获取新浪新闻热榜' })
-	@ApiMaintainers('lonewolfyx')
-	async getRank(@Param() param: SinaNewsParamDto) {
-		const { type } = param
-		return await this.sinaNewsService.getNewsRank(type)
-	}
+    @Get('rank/:type')
+    @ApiOperation({ summary: '获取新浪新闻热榜' })
+    @ApiMaintainers('lonewolfyx')
+    async getRank(@Param() param: SinaNewsParamDto) {
+        const { type } = param
+        return await this.sinaNewsService.getNewsRank(type)
+    }
 }

@@ -34,49 +34,49 @@ import { CommonModule } from './common/module/common.module'
 import { CloudTencentModule } from './modules/cloud.tencent/cloud.tencent.module'
 
 @Module({
-	imports: [
-		ConfigModule.forRoot({
-			isGlobal: true,
-			envFilePath: [`.env.${process.env.NODE_ENV}`]
-		}),
-		CommonModule,
+    imports: [
+        ConfigModule.forRoot({
+            isGlobal: true,
+            envFilePath: [`.env.${process.env.NODE_ENV}`]
+        }),
+        CommonModule,
 
-		BaiduModule,
-		HupuModule,
-		WeiboModule,
-		CsdnModule,
-		JuejinModule,
-		ToutiaoModule,
-		ZhihuModule,
-		WeReadModule,
-		DouyinModule,
-		BilibiliModule,
-		YqqModule,
-		AcfunModule,
-		NeteaseModule,
-		ThreeSixKrModule,
-		V2exModule,
-		ItHomeModule,
-		ThePaperModule,
-		SspaiModule,
-		QqNewsModule,
-		DoubanModule,
-		AliyunModule,
-		HistoryModule,
-		SinaNewsModule,
-		IfengNewsModule,
-		OschinaModule,
-		CloudTencentModule
+        BaiduModule,
+        HupuModule,
+        WeiboModule,
+        CsdnModule,
+        JuejinModule,
+        ToutiaoModule,
+        ZhihuModule,
+        WeReadModule,
+        DouyinModule,
+        BilibiliModule,
+        YqqModule,
+        AcfunModule,
+        NeteaseModule,
+        ThreeSixKrModule,
+        V2exModule,
+        ItHomeModule,
+        ThePaperModule,
+        SspaiModule,
+        QqNewsModule,
+        DoubanModule,
+        AliyunModule,
+        HistoryModule,
+        SinaNewsModule,
+        IfengNewsModule,
+        OschinaModule,
+        CloudTencentModule
 
-	],
-	providers: [
-		// 全局 异常过滤器
-		{ provide: APP_FILTER, useClass: AllExceptionFilter },
-		// 全局 响应拦截器
-		{ provide: APP_INTERCEPTOR, useClass: ResponseInterceptor }
-	],
-	controllers: [
-		AppController
-	]
+    ],
+    providers: [
+        // 全局 异常过滤器
+        { provide: APP_FILTER, useClass: AllExceptionFilter },
+        // 全局 响应拦截器
+        { provide: APP_INTERCEPTOR, useClass: ResponseInterceptor }
+    ],
+    controllers: [
+        AppController
+    ]
 })
 export class AppModule {}

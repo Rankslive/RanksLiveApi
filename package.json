@@ -1,101 +1,101 @@
 {
-	"name": "ranks-live",
-	"version": "0.0.6",
-	"private": true,
-	"description": "",
-	"homepage": "https://github.com/Rankslive/RanksLiveApi",
-	"bugs": {
-		"url": "https://github.com/Rankslive/RanksLiveApi/issues"
-	},
-	"author": "lonewolfyx",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:Rankslive/RanksLiveApi.git"
-	},
-	"scripts": {
-		"build": "nest build",
-		"format": "prettier --write ./",
-		"start": "cross-env NODE_ENV=production nest start",
-		"start:debug": "nest start --debug --watch",
-		"start:dev": "cross-env NODE_ENV=development nest start --watch",
-		"start:prod": "node dist/main",
-		"test": "jest",
-		"test:cov": "jest --coverage",
-		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-		"test:e2e": "jest --config ./test/jest-e2e.json",
-		"test:watch": "jest --watch"
-	},
-	"dependencies": {
-		"@dotenvx/dotenvx": "^1.39.0",
-		"@nestjs/common": "^11.0.1",
-		"@nestjs/config": "^4.0.1",
-		"@nestjs/core": "^11.0.1",
-		"@nestjs/jwt": "^11.0.0",
-		"@nestjs/mapped-types": "^2.1.0",
-		"@nestjs/passport": "^11.0.5",
-		"@nestjs/platform-express": "^11.0.1",
-		"@nestjs/swagger": "^11.0.7",
-		"@prisma/client": "^6.4.1",
-		"axios": "^1.8.4",
-		"big-integer": "^1.6.52",
-		"cheerio": "^1.0.0",
-		"class-transformer": "^0.5.1",
-		"class-validator": "^0.14.1",
-		"crypto-js": "^4.2.0",
-		"dayjs": "^1.11.13",
-		"ioredis": "^5.6.0",
-		"md5-typescript": "^1.0.5",
-		"passport": "^0.7.0",
-		"passport-jwt": "^4.0.1",
-		"passport-local": "^1.0.0",
-		"radash": "^12.1.0",
-		"reflect-metadata": "^0.2.2",
-		"rxjs": "^7.8.1"
-	},
-	"devDependencies": {
-		"@lonewolfyx/tsconfig": "^0.0.2",
-		"@nestjs/cli": "^11.0.0",
-		"@nestjs/schematics": "^11.0.0",
-		"@nestjs/testing": "^11.0.1",
-		"@swc/cli": "^0.6.0",
-		"@swc/core": "^1.10.7",
-		"@types/crypto-js": "^4.2.2",
-		"@types/express": "^5.0.0",
-		"@types/jest": "^29.5.14",
-		"@types/node": "^22.10.7",
-		"@types/passport-jwt": "^4.0.1",
-		"@types/passport-local": "^1.0.38",
-		"@types/supertest": "^6.0.2",
-		"cross-env": "^7.0.3",
-		"globals": "^15.14.0",
-		"jest": "^29.7.0",
-		"prettier": "^3.4.2",
-		"prettier-plugin-multiline-arrays": "^3.0.6",
-		"prisma": "^6.4.1",
-		"source-map-support": "^0.5.21",
-		"supertest": "^7.0.0",
-		"ts-jest": "^29.2.5",
-		"ts-loader": "^9.5.2",
-		"ts-node": "^10.9.2",
-		"tsconfig-paths": "^4.2.0",
-		"typescript": "^5.7.3"
-	},
-	"license": "UNLICENSED",
-	"jest": {
-		"moduleFileExtensions": [
-			"js",
-			"json",
-			"ts"
-		],
-		"rootDir": "src",
-		"testRegex": ".*\\.spec\\.ts$",
-		"transform": {
-			"^.+\\.(t|j)s$": "ts-jest"
-		},
-		"collectCoverageFrom": [
-			"**/*.(t|j)s"
-		],
-		"coverageDirectory": "../coverage",
-		"testEnvironment": "node"
-	}
+    "name": "ranks-live",
+    "version": "0.0.6",
+    "private": true,
+    "description": "",
+    "homepage": "https://github.com/Rankslive/RanksLiveApi",
+    "bugs": {
+        "url": "https://github.com/Rankslive/RanksLiveApi/issues"
+    },
+    "author": "lonewolfyx",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Rankslive/RanksLiveApi.git"
+    },
+    "scripts": {
+        "build": "nest build",
+        "format": "prettier --write ./",
+        "start": "cross-env NODE_ENV=production nest start",
+        "start:debug": "nest start --debug --watch",
+        "start:dev": "cross-env NODE_ENV=development nest start --watch",
+        "start:prod": "node dist/main",
+        "test": "jest",
+        "test:cov": "jest --coverage",
+        "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+        "test:e2e": "jest --config ./test/jest-e2e.json",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@dotenvx/dotenvx": "^1.39.0",
+        "@nestjs/common": "^11.0.1",
+        "@nestjs/config": "^4.0.1",
+        "@nestjs/core": "^11.0.1",
+        "@nestjs/jwt": "^11.0.0",
+        "@nestjs/mapped-types": "^2.1.0",
+        "@nestjs/passport": "^11.0.5",
+        "@nestjs/platform-express": "^11.0.1",
+        "@nestjs/swagger": "^11.0.7",
+        "@prisma/client": "^6.4.1",
+        "axios": "^1.8.4",
+        "big-integer": "^1.6.52",
+        "cheerio": "^1.0.0",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.1",
+        "crypto-js": "^4.2.0",
+        "dayjs": "^1.11.13",
+        "ioredis": "^5.6.0",
+        "md5-typescript": "^1.0.5",
+        "passport": "^0.7.0",
+        "passport-jwt": "^4.0.1",
+        "passport-local": "^1.0.0",
+        "radash": "^12.1.0",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.1"
+    },
+    "devDependencies": {
+        "@lonewolfyx/tsconfig": "^0.0.2",
+        "@nestjs/cli": "^11.0.0",
+        "@nestjs/schematics": "^11.0.0",
+        "@nestjs/testing": "^11.0.1",
+        "@swc/cli": "^0.6.0",
+        "@swc/core": "^1.10.7",
+        "@types/crypto-js": "^4.2.2",
+        "@types/express": "^5.0.0",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.10.7",
+        "@types/passport-jwt": "^4.0.1",
+        "@types/passport-local": "^1.0.38",
+        "@types/supertest": "^6.0.2",
+        "cross-env": "^7.0.3",
+        "globals": "^15.14.0",
+        "jest": "^29.7.0",
+        "prettier": "^3.4.2",
+        "prettier-plugin-multiline-arrays": "^3.0.6",
+        "prisma": "^6.4.1",
+        "source-map-support": "^0.5.21",
+        "supertest": "^7.0.0",
+        "ts-jest": "^29.2.5",
+        "ts-loader": "^9.5.2",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.7.3"
+    },
+    "license": "UNLICENSED",
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "src",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
+    }
 }

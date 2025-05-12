@@ -8,7 +8,7 @@ import { Request, Response, NextFunction } from 'express'
  * @param next
  */
 export const requestMiddleware = (req: Request, res: Response, next: NextFunction) => {
-	req.requestId = dayjs().format('YYYYMMDDHHmmss')
+    req.requestId = dayjs().format('YYYYMMDDHHmmss')
 
-	next()
+    next()
 }

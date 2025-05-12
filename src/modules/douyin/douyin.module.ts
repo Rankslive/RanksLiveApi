@@ -3,7 +3,7 @@ import { DouyinController } from './douyin.controller'
 import { DouyinService } from './douyin.service'
 
 @Module({
-	controllers: [DouyinController],
-	providers: [DouyinService]
+    controllers: [DouyinController],
+    providers: [DouyinService]
 })
 export class DouyinModule {}

@@ -2,7 +2,7 @@
  * 业务响应状态码
  */
 interface ResponseCode {
-	[key: number]: number | string
+    [key: number]: number | string
 }
 
 export const OPERATION_SUCCESSFUL = '操作成功'

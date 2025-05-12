@@ -8,13 +8,13 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('it.home')
 @ApiTags('iT 之家')
 export class ItHomeController {
-	constructor(private readonly itHomeService: ItHomeService) {}
+    constructor(private readonly itHomeService: ItHomeService) {}
 
-	@Get('rank/:rank/:type')
-	@ApiOperation({ summary: '获取 it 之家榜单' })
-	@ApiMaintainers('lonewolfyx')
-	async getReadDayRank(@Param() param: iTHomeParamDto) {
-		const { rank, type } = param
-		return this.itHomeService.getRankList(ItHomeConstants[rank]['type'], type)
-	}
+    @Get('rank/:rank/:type')
+    @ApiOperation({ summary: '获取 it 之家榜单' })
+    @ApiMaintainers('lonewolfyx')
+    async getReadDayRank(@Param() param: iTHomeParamDto) {
+        const { rank, type } = param
+        return this.itHomeService.getRankList(ItHomeConstants[rank]['type'], type)
+    }
 }

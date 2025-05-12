@@ -3,7 +3,7 @@ import { CloudTencentController } from './cloud.tencent.controller'
 import { CloudTencentService } from './cloud.tencent.service'
 
 @Module({
-	controllers: [CloudTencentController],
-	providers: [CloudTencentService]
+    controllers: [CloudTencentController],
+    providers: [CloudTencentService]
 })
 export class CloudTencentModule {}

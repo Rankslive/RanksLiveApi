@@ -1,6 +1,6 @@
 import {
-	cloudTencentConstants,
-	cloudTencentZoneConstants
+    cloudTencentConstants,
+    cloudTencentZoneConstants
 } from '@/modules/cloud.tencent/constants/cloud.tencent.constants'
 
 export type cloudTencentType = (typeof cloudTencentConstants)[keyof typeof cloudTencentConstants]['value']

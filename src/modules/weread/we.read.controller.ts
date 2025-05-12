@@ -8,13 +8,13 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('we.read')
 @ApiTags('微信读书')
 export class WeReadController {
-	constructor(private readonly WeReadService: WeReadService) {}
+    constructor(private readonly WeReadService: WeReadService) {}
 
-	@Get(':type')
-	@ApiOperation({ summary: '获取微信读书榜单' })
-	@ApiMaintainers('lonewolfyx')
-	async getSurge(@Param() param: WeReadParamDto) {
-		const { type } = param
-		return await this.WeReadService.getRankList(WeReadConstants[type]['value'])
-	}
+    @Get(':type')
+    @ApiOperation({ summary: '获取微信读书榜单' })
+    @ApiMaintainers('lonewolfyx')
+    async getSurge(@Param() param: WeReadParamDto) {
+        const { type } = param
+        return await this.WeReadService.getRankList(WeReadConstants[type]['value'])
+    }
 }

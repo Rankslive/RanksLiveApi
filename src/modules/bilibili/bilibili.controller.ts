@@ -8,41 +8,41 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('bilibili')
 @ApiTags('哔哩哔哩')
 export class BilibiliController {
-	constructor(private readonly BiliBiliService: BilibiliService) {}
+    constructor(private readonly BiliBiliService: BilibiliService) {}
 
-	@Get('comprehensive/hot')
-	@ApiOperation({ summary: '获取哔哩哔哩 · 综合热门榜' })
-	@ApiMaintainers('lonewolfyx')
-	async getHot() {
-		return await this.BiliBiliService.getComprehensiveHotRankList()
-	}
+    @Get('comprehensive/hot')
+    @ApiOperation({ summary: '获取哔哩哔哩 · 综合热门榜' })
+    @ApiMaintainers('lonewolfyx')
+    async getHot() {
+        return await this.BiliBiliService.getComprehensiveHotRankList()
+    }
 
-	@Get('must/brush')
-	@ApiOperation({ summary: '获取哔哩哔哩 · 入站必刷榜' })
-	@ApiMaintainers('lonewolfyx')
-	async getMustBrushList() {
-		return await this.BiliBiliService.getPopularPreciousRankList()
-	}
+    @Get('must/brush')
+    @ApiOperation({ summary: '获取哔哩哔哩 · 入站必刷榜' })
+    @ApiMaintainers('lonewolfyx')
+    async getMustBrushList() {
+        return await this.BiliBiliService.getPopularPreciousRankList()
+    }
 
-	@Get('rank/:type')
-	@ApiOperation({ summary: '获取哔哩哔哩排行榜' })
-	@ApiMaintainers('lonewolfyx')
-	async getAnimeRank(@Param() param: BiliBiliRankParamDto) {
-		const { type } = param
-		const rankType = BiliBiliRank[type]['value']
+    @Get('rank/:type')
+    @ApiOperation({ summary: '获取哔哩哔哩排行榜' })
+    @ApiMaintainers('lonewolfyx')
+    async getAnimeRank(@Param() param: BiliBiliRankParamDto) {
+        const { type } = param
+        const rankType = BiliBiliRank[type]['value']
 
-		const useBaseRankSet = new Set(useBaseRank)
-		const useSeasonRankSet = new Set(useSeasonRank)
+        const useBaseRankSet = new Set(useBaseRank)
+        const useSeasonRankSet = new Set(useSeasonRank)
 
-		// 策略模式映射处理函数
-		const strategy = {
-			base: () => this.BiliBiliService.getWebRankList(rankType),
-			season: () => this.BiliBiliService.getSeasonRankList(rankType),
-			default: () => this.BiliBiliService.getRankListV2(rankType)
-		}
+        // 策略模式映射处理函数
+        const strategy = {
+            base: () => this.BiliBiliService.getWebRankList(rankType),
+            season: () => this.BiliBiliService.getSeasonRankList(rankType),
+            default: () => this.BiliBiliService.getRankListV2(rankType)
+        }
 
-		const strategyType = useBaseRankSet.has(type) ? 'base' : useSeasonRankSet.has(type) ? 'season' : 'default'
+        const strategyType = useBaseRankSet.has(type) ? 'base' : useSeasonRankSet.has(type) ? 'season' : 'default'
 
-		return await strategy[strategyType]()
-	}
+        return await strategy[strategyType]()
+    }
 }

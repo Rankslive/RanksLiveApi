@@ -8,13 +8,13 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('oschina')
 @ApiTags('开源中国')
 export class OschinaController {
-	constructor(private readonly oschinaService: OschinaService) {}
+    constructor(private readonly oschinaService: OschinaService) {}
 
-	@Get('groups/:type')
-	@ApiDescription('获取开源中国专区最新文章')
-	@ApiMaintainers('lonewolfyx')
-	async getGroupsNew(@Param() param: OschinaGroupParamDto) {
-		const { type } = param
-		return await this.oschinaService.getGroupsNewListByWeb(type)
-	}
+    @Get('groups/:type')
+    @ApiDescription('获取开源中国专区最新文章')
+    @ApiMaintainers('lonewolfyx')
+    async getGroupsNew(@Param() param: OschinaGroupParamDto) {
+        const { type } = param
+        return await this.oschinaService.getGroupsNewListByWeb(type)
+    }
 }

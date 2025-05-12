@@ -6,12 +6,12 @@ import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 @Controller('douyin')
 @ApiTags('抖音')
 export class DouyinController {
-	constructor(private readonly DouYinService: DouyinService) {}
+    constructor(private readonly DouYinService: DouyinService) {}
 
-	@Get('hot')
-	@ApiOperation({ summary: '获取抖音热榜' })
-	@ApiMaintainers('lonewolfyx')
-	async getDouYinHot() {
-		return await this.DouYinService.getHotRankList()
-	}
+    @Get('hot')
+    @ApiOperation({ summary: '获取抖音热榜' })
+    @ApiMaintainers('lonewolfyx')
+    async getDouYinHot() {
+        return await this.DouYinService.getHotRankList()
+    }
 }

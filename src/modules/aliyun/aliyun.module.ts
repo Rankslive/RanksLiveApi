@@ -3,7 +3,7 @@ import { AliyunController } from './aliyun.controller'
 import { AliyunService } from './aliyun.service'
 
 @Module({
-	controllers: [AliyunController],
-	providers: [AliyunService]
+    controllers: [AliyunController],
+    providers: [AliyunService]
 })
 export class AliyunModule {}

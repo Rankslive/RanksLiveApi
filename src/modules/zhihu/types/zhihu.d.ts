@@ -1,9 +1,9 @@
 import {
-	zhihuConstants,
-	zhihuCreatorDomain,
-	zhihuPeriod,
-	zhihuSort,
-	zhihuSortType
+    zhihuConstants,
+    zhihuCreatorDomain,
+    zhihuPeriod,
+    zhihuSort,
+    zhihuSortType
 } from '@/modules/zhihu/constants/zhihu.constants'
 
 export type zhihuSubScenesType = `${zhihuConstants}`
