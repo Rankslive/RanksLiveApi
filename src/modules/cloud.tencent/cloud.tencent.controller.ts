@@ -30,7 +30,7 @@ export class CloudTencentController {
     }
 
     @Get('zone/:type')
-    @ApiDescription('获取腾讯云开发者社区 · 原创作者热度排行榜')
+    @ApiDescription('获取腾讯云开发者社区 · 技术专区最新文章')
     @ApiMaintainers('lonewolfyx')
     async getZoneArticle(@Param() param: CloudTencentZoneParamDto) {
         const { type } = param
