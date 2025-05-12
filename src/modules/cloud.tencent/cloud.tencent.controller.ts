@@ -8,6 +8,7 @@ import {
     cloudTencentConstants,
     cloudTencentZoneConstants
 } from '@/modules/cloud.tencent/constants/cloud.tencent.constants'
+import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
 @Controller('cloud.tencent')
 @ApiTags('腾讯云')
@@ -17,6 +18,7 @@ export class CloudTencentController {
     @Get('article/:type')
     @ApiDescription('获取腾讯云开发者社区文章')
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://cloud.tencent.com/developer')
     async getHostArticle(@Param() param: CloudTencentParamDto) {
         const { type } = param
         return await this.cloudTencentService.getArticleList(cloudTencentConstants[type]['value'])
@@ -25,6 +27,7 @@ export class CloudTencentController {
     @Get('rank/author')
     @ApiDescription('获取腾讯云开发者社区 · 原创作者热度排行榜')
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://cloud.tencent.com/developer/rank')
     async getAuthorRank() {
         return await this.cloudTencentService.getAuthorRankList()
     }
@@ -32,6 +35,7 @@ export class CloudTencentController {
     @Get('zone/:type')
     @ApiDescription('获取腾讯云开发者社区 · 技术专区最新文章')
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://cloud.tencent.com/developer/zone')
     async getZoneArticle(@Param() param: CloudTencentZoneParamDto) {
         const { type } = param
         return await this.cloudTencentService.getZoneArticleList(cloudTencentZoneConstants[type]['id'])
