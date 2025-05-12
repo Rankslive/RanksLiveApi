@@ -12,6 +12,7 @@ import { ResponseDto } from '@/common/dto/response.dto'
 import { HttpException } from '@nestjs/common/exceptions/http.exception'
 import { isArray } from 'radash'
 import { SERVER_INTERNAL_ERROR } from '@/constants/response.constants'
+import * as process from 'node:process'
 
 interface ErrorResponse {
 	message: number | number[] | string | string[]
@@ -34,6 +35,10 @@ export class AllExceptionFilter<T> implements ExceptionFilter {
 		const response: Response = ctx.getResponse<Response>()
 		const request: Request = ctx.getRequest<Request>()
 
+		// 开发环境则打印错误信息
+		if (process.env.NODE_ENV === 'development') {
+			console.log(exception)
+		}
 		const { code, message } = this.getErrorStructure(exception)
 
 		response.status(HttpStatus.OK).json(new ResponseDto(message).setCode(code).setMessage('error'))
