@@ -4,6 +4,7 @@ import { JuejinService } from '@/modules/juejin/juejin.service'
 import { JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
 import { JuejinArticleDto, JuejinAuthorDto } from '@/modules/juejin/juejin.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
 @Controller('juejin')
 @ApiTags('稀土掘金')
@@ -13,6 +14,7 @@ export class JuejinController {
     @Get('article/:type')
     @ApiOperation({ summary: '获取掘金文章榜' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://juejin.cn/hot/articles')
     async getJuejinArticleRank(@Param() param: JuejinArticleDto) {
         const { type } = param
         return await this.JuejinService.getArticleRankList(JuejinConstants[type]['category_id'])
@@ -21,6 +23,7 @@ export class JuejinController {
     @Get('columns')
     @ApiOperation({ summary: '获取掘金精选专栏榜' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://juejin.cn/hot/columns')
     async getJuejinHotColumns() {
         return await this.JuejinService.getHotColumnsRankList()
     }
@@ -28,6 +31,7 @@ export class JuejinController {
     @Get('collections')
     @ApiOperation({ summary: '获取掘金推荐收藏集' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://juejin.cn/hot/collections')
     async getJuejinHotCollections() {
         return await this.JuejinService.getHotCollectionsRankList()
     }
@@ -35,6 +39,7 @@ export class JuejinController {
     @Get('authors/:type')
     @ApiOperation({ summary: '获取掘金优质作者榜' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://juejin.cn/hot/authors/6809637769959178254')
     async getJuejinAuthorBackEnd(@Param() param: JuejinAuthorDto) {
         const { type } = param
         return await this.JuejinService.getAuthorRankList(JuejinConstants[type].category_id)
@@ -43,6 +48,7 @@ export class JuejinController {
     @Get('article/collect/:type')
     @ApiOperation({ summary: '获取掘金文章收藏榜' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://juejin.cn/hot/collected-articles')
     async getJuejinArticleCollectedRank(@Param() param: JuejinArticleDto) {
         const { type } = param
         return await this.JuejinService.getArticleRankList(JuejinConstants[type].category_id, 'collect')

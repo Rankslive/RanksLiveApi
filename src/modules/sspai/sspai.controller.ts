@@ -2,6 +2,7 @@ import { Controller, Get } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { SspaiService } from '@/modules/sspai/sspai.service'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
 @Controller('sspai')
 @ApiTags('少数派')
@@ -11,6 +12,7 @@ export class SspaiController {
     @Get('hot')
     @ApiOperation({ summary: '获取少数派 · 最热资讯' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://sspai.com/')
     async getHotRank() {
         return await this.sspaiService.getHotRank()
     }

@@ -4,6 +4,7 @@ import { ApiDescription } from '@/common/decorator/api.description.decorator'
 import { OschinaService } from '@/modules/oschina/oschina.service'
 import { OschinaGroupParamDto } from '@/modules/oschina/oschina.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
 @Controller('oschina')
 @ApiTags('开源中国')
@@ -13,6 +14,7 @@ export class OschinaController {
     @Get('groups/:type')
     @ApiDescription('获取开源中国专区最新文章')
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.oschina.net/')
     async getGroupsNew(@Param() param: OschinaGroupParamDto) {
         const { type } = param
         return await this.oschinaService.getGroupsNewListByWeb(type)

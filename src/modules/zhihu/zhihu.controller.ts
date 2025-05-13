@@ -4,6 +4,7 @@ import { ZhihuService } from '@/modules/zhihu/zhihu.service'
 import { zhihuConstants, zhihuCreatorDomain } from '@/modules/zhihu/constants/zhihu.constants'
 import { ZhiHuHotQuestionDto, ZhiHuPotentialQuestionDto } from '@/modules/zhihu/zhihu.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
 @Controller('zhihu')
 @ApiTags('知乎')
@@ -13,6 +14,7 @@ export class ZhihuController {
     @Get('hot')
     @ApiOperation({ summary: '获取知乎热榜' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.zhihu.com/hot')
     async getZhiHuHot() {
         return await this.ZhihuService.getHotRankList()
     }
@@ -20,6 +22,7 @@ export class ZhihuController {
     @Get('miss/hot')
     @ApiOperation({ summary: '获取知乎错过热议' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.zhihu.com/')
     async getZhiHuMissHot() {
         return await this.ZhihuService.getZhihuNextRenderList(zhihuConstants.billboard_missed)
     }
@@ -27,6 +30,7 @@ export class ZhihuController {
     @Get('weekly')
     @ApiOperation({ summary: '获取知乎每周必看' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.zhihu.com/')
     async getZhiHuWeekly() {
         return await this.ZhihuService.getZhihuNextRenderList(zhihuConstants.billboard_weekly)
     }
@@ -34,6 +38,7 @@ export class ZhihuController {
     @Get('hot/question/:domain/:period')
     @ApiOperation({ summary: '获取知乎近期热点' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.zhihu.com/creator/hot-question/hot/0/hour')
     async getZhiHuHotQuestion(@Param() params: ZhiHuHotQuestionDto) {
         const { domain, period } = params
         return await this.ZhihuService.getZhihuCreatorRankList(zhihuCreatorDomain[domain]['value'], period)
@@ -42,6 +47,7 @@ export class ZhihuController {
     @Get('potential/question/:domain/:sortType')
     @ApiOperation({ summary: '获取知乎潜力问题' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.zhihu.com/creator/potential-question/potential/0/all')
     async getZhiHuPotentialQuestion(@Param() params: ZhiHuPotentialQuestionDto) {
         const { domain, sortType } = params
         return await this.ZhihuService.getZhihuPotentialRankList(zhihuCreatorDomain[domain]['value'], sortType)
@@ -50,6 +56,7 @@ export class ZhihuController {
     @Get('daily')
     @ApiOperation({ summary: '获取知乎日报' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://daily.zhihu.com/')
     async getZhiHuDaily() {
         return await this.ZhihuService.getZhihuDailyRank()
     }

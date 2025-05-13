@@ -3,6 +3,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { SinaNewsService } from '@/modules/sina.news/sina.news.service'
 import { SinaNewsParamDto } from '@/modules/sina.news/sina.news.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
 @Controller('sina.news')
 @ApiTags('新浪新闻')
@@ -12,6 +13,7 @@ export class SinaNewsController {
     @Get('rank/:type')
     @ApiOperation({ summary: '获取新浪新闻热榜' })
     @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://news.sina.cn/')
     async getRank(@Param() param: SinaNewsParamDto) {
         const { type } = param
         return await this.sinaNewsService.getNewsRank(type)
