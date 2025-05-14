@@ -35,4 +35,12 @@ export class OschinaController {
     async getHeadline() {
         return await this.oschinaService.getHeadline()
     }
+
+    @Get('topic')
+    @ApiDescription('获取开源中国 · 热门话题')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.oschina.net/index/')
+    async getTweetTopic() {
+        return await this.oschinaService.getTweetTopic()
+    }
 }

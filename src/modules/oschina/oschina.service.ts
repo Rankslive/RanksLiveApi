@@ -151,4 +151,32 @@ export class OschinaService {
             }) || []
         )
     }
+
+    /**
+     * 获取热门话题
+     */
+    async getTweetTopic() {
+        const { data } = await this.httpClientService.request({
+            method: 'get',
+            url: 'https://apiv1.oschina.net/oschinapi/tweet/topic/hot',
+            params: {
+                pageNum: 1,
+                pageSize: 10
+            },
+            headers: {
+                'User-Agent': BASE_USER_AGENT
+            }
+        })
+
+        return (
+            data.result.map((item: any) => {
+                return {
+                    title: item.topic,
+                    view: item.heat,
+                    url: `https://www.oschina.net/oscTweet/topic/${encodeURIComponent(item.topic)}`,
+                    create_time: dayjs(item.createTime).unix()
+                }
+            }) || []
+        )
+    }
 }
