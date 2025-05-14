@@ -2,9 +2,10 @@ import { Controller, Get, Param } from '@nestjs/common'
 import { ApiTags } from '@nestjs/swagger'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
 import { OschinaService } from '@/modules/oschina/oschina.service'
-import { OschinaGroupParamDto } from '@/modules/oschina/oschina.dto'
+import { OschinaBlogParamDto, OschinaGroupParamDto } from '@/modules/oschina/oschina.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { oschinaBlogArticle } from '@/modules/oschina/constants/oschina.constants'
 
 @Controller('oschina')
 @ApiTags('开源中国')
@@ -42,5 +43,14 @@ export class OschinaController {
     @SourceUrl('https://www.oschina.net/index/')
     async getTweetTopic() {
         return await this.oschinaService.getTweetTopic()
+    }
+
+    @Get('blog/:type/:sort')
+    @ApiDescription('获取开源中国 · 文章博客')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.oschina.net/blog_beta')
+    async getTBlogRankList(@Param() param: OschinaBlogParamDto) {
+        const { type, sort } = param
+        return await this.oschinaService.getTBlogRankList(oschinaBlogArticle[type]['id'], sort)
     }
 }

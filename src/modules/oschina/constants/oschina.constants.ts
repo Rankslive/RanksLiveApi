@@ -170,3 +170,37 @@ export const oschinaGroups = {
         id: 42
     }
 } as const
+
+// 开源博客排序方式
+export const oschinaBlogRankSort = {
+    time: {
+        name: '最新推荐',
+        value: 'time'
+    },
+    hot: {
+        name: '每日创作',
+        value: 'hot'
+    }
+} as const
+
+// 开源博客文章分类类型
+export const oschinaBlogArticle = {
+    aiLlm: { name: 'AI & 大模型', id: 4, value: 'aiLlm' },
+    cloudNative: { name: '云原生', id: 3, value: 'cloudNative' },
+    frontEnd: { name: '大前端', id: 12, value: 'frontEnd' },
+    architecture: { name: '软件架构', id: 10, value: 'architecture' },
+    devSkill: { name: '开发技能', id: 11, value: 'devSkill' },
+    hardwareIoT: { name: '硬件 & IoT', id: 6, value: 'hardwareIoT' },
+    devOps: { name: 'DevOps', id: 9, value: 'devOps' },
+    os: { name: '操作系统', id: 19, value: 'os' },
+    programmer: { name: '程序人生', id: 8, value: 'programmer' },
+    database: { name: '数据库', id: 5, value: 'database' },
+    blockchainWeb3: { name: '区块链 & Web3 & 元宇宙', id: 2, value: 'blockchainWeb3' },
+    testOps: { name: '软件测试 & 运维', id: 14, value: 'testOps' },
+    infoSec: { name: '信息安全', id: 13, value: 'infoSec' },
+    netTech: { name: '网络技术', id: 15, value: 'netTech' },
+    industryTrend: { name: '行业趋势', id: 7, value: 'industryTrend' },
+    osgovernance: { name: '开源治理', id: 1, value: 'osgovernance' },
+    gameDev: { name: '游戏开发', id: 16, value: 'gameDev' },
+    mediaProc: { name: '多媒体处理', id: 17, value: 'mediaProc' }
+} as const

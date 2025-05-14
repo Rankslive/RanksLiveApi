@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { OschinaGroupType } from './types/oschina'
+import { oschinaBlogArticleIdType, oschinaBlogRankSortType, OschinaGroupType } from './types/oschina'
 import { oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
 import dayjs from 'dayjs'
 import { type CheerioAPI, load } from 'cheerio'
@@ -175,6 +175,42 @@ export class OschinaService {
                     view: item.heat,
                     url: `https://www.oschina.net/oscTweet/topic/${encodeURIComponent(item.topic)}`,
                     create_time: dayjs(item.createTime).unix()
+                }
+            }) || []
+        )
+    }
+
+    async getTBlogRankList(typeId: oschinaBlogArticleIdType, sort: oschinaBlogRankSortType) {
+        const api = {
+            time: '/ApiHomeNew/homeListByBlogTime',
+            hot: '/ApiHomeNew/homeListByBlogHot'
+        }
+
+        const { data } = await this.httpClientService.request({
+            method: 'get',
+            url: `https://www.oschina.net${api[sort]}`,
+            params: {
+                pageNum: 1,
+                pageSize: 15,
+                type: typeId
+            },
+            headers: {
+                'User-Agent': BASE_USER_AGENT
+            }
+        })
+
+        return (
+            data.result.map((item: any) => {
+                return {
+                    title: item.obj_title,
+                    view: item.view_count,
+                    url:
+                        item.obj_type === 4
+                            ? `https://www.oschina.net/news_beta/${item.obj_id}`
+                            : item.obj_type === 3
+                              ? `https://my.oschina.net/u/${item.userVo.id}/blog_beta/${item.obj_id}`
+                              : '',
+                    create_time: item.create_time
                 }
             }) || []
         )
