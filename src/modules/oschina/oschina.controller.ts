@@ -14,7 +14,7 @@ export class OschinaController {
     @Get('groups/:type')
     @ApiDescription('获取开源中国专区最新文章')
     @ApiMaintainers('lonewolfyx')
-    @SourceUrl('https://www.oschina.net/')
+    @SourceUrl('https://www.oschina.net/groups/')
     async getGroupsNew(@Param() param: OschinaGroupParamDto) {
         const { type } = param
         return await this.oschinaService.getGroupsNewListByWeb(type)
