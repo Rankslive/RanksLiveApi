@@ -2,57 +2,25 @@ import { zhihuCreatorDomain, zhihuPeriod, zhihuSort } from '@/modules/zhihu/cons
 import { IsEnum } from 'class-validator'
 import { validateMessage } from '@/utils/validation.prompts'
 import { DomainType, PeriodType, SortType } from './types/zhihu'
-import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
-import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
+import { transformConstantsObjectToEnum } from '@/utils/helper'
+import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
 
 export class ZhiHuPotentialQuestionDto {
-    @ApiPropertyExtend({
-        description: '榜单类型',
-        schema: {
-            type: 'string',
-            enum: Object.keys(zhihuCreatorDomain),
-            example: 'all',
-            'x-apifox-enum': transformConstantsToOptions(zhihuCreatorDomain)
-        }
-    })
+    @ApiPropertyEnumExtend('榜单类型', zhihuCreatorDomain, 'all')
     @IsEnum(transformConstantsObjectToEnum(zhihuCreatorDomain), { message: validateMessage('domain') })
     domain: DomainType
 
-    @ApiPropertyExtend({
-        description: '排序类型',
-        schema: {
-            type: 'string',
-            enum: Object.keys(zhihuSort),
-            example: 'all',
-            'x-apifox-enum': transformConstantsToOptions(zhihuSort)
-        }
-    })
+    @ApiPropertyEnumExtend('排序类型', zhihuSort, 'all')
     @IsEnum(transformConstantsObjectToEnum(zhihuSort), { message: validateMessage('sortType') })
     sortType: SortType
 }
 
 export class ZhiHuHotQuestionDto {
-    @ApiPropertyExtend({
-        description: '榜单类型',
-        schema: {
-            type: 'string',
-            enum: Object.keys(zhihuCreatorDomain),
-            example: 'all',
-            'x-apifox-enum': transformConstantsToOptions(zhihuCreatorDomain)
-        }
-    })
+    @ApiPropertyEnumExtend('榜单类型', zhihuCreatorDomain, 'all')
     @IsEnum(transformConstantsObjectToEnum(zhihuCreatorDomain), { message: validateMessage('domain') })
     domain: DomainType
 
-    @ApiPropertyExtend({
-        description: '榜单周期',
-        schema: {
-            type: 'string',
-            enum: Object.keys(zhihuPeriod),
-            example: 'hour',
-            'x-apifox-enum': transformConstantsToOptions(zhihuPeriod)
-        }
-    })
+    @ApiPropertyEnumExtend('榜单周期', zhihuPeriod, 'hour')
     @IsEnum(transformConstantsObjectToEnum(zhihuPeriod), { message: validateMessage('period') })
     period: PeriodType
 }

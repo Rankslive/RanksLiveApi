@@ -1,34 +1,18 @@
 import { JuejinAuthorConstants, JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
 import { IsEnum } from 'class-validator'
 import { JueJinType } from './types/juejin'
-import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
+import { transformConstantsObjectToEnum } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'
-import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
+import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
 
 export class JuejinArticleDto {
-    @ApiPropertyExtend({
-        description: '榜单类别',
-        schema: {
-            type: 'string',
-            enum: Object.keys(JuejinConstants),
-            example: 'all',
-            'x-apifox-enum': transformConstantsToOptions(JuejinConstants)
-        }
-    })
+    @ApiPropertyEnumExtend('榜单类型', JuejinConstants, 'all')
     @IsEnum(transformConstantsObjectToEnum(JuejinConstants), { message: validateMessage('type') })
     type: JueJinType
 }
 
 export class JuejinAuthorDto {
-    @ApiPropertyExtend({
-        description: '榜单类别',
-        schema: {
-            type: 'string',
-            enum: Object.keys(JuejinAuthorConstants),
-            example: 'backend',
-            'x-apifox-enum': transformConstantsToOptions(JuejinAuthorConstants)
-        }
-    })
+    @ApiPropertyEnumExtend('榜单类别', JuejinAuthorConstants, 'backend')
     @IsEnum(transformConstantsObjectToEnum(JuejinAuthorConstants), { message: validateMessage('type') })
     type: JueJinType
 }

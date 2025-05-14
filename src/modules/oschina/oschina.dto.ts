@@ -1,49 +1,22 @@
 import { oschinaBlogArticleType, oschinaBlogRankSortType, OschinaGroupType } from './types/oschina'
 import { IsEnum } from 'class-validator'
-import { transformConstantsObjectToEnum, transformConstantsToOptions } from '@/utils/helper'
+import { transformConstantsObjectToEnum } from '@/utils/helper'
 import { oschinaBlogArticle, oschinaBlogRankSort, oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
 import { validateMessage } from '@/utils/validation.prompts'
-import { ApiPropertyExtend } from '@/common/decorator/api.property.extend.decorator'
+import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
 
 export class OschinaGroupParamDto {
-    @ApiPropertyExtend({
-        description: '榜单类型',
-        enum: Object.keys(oschinaGroups),
-        schema: {
-            type: 'string',
-            enum: Object.keys(oschinaGroups),
-            example: 'ascend',
-            'x-apifox-enum': transformConstantsToOptions(oschinaGroups)
-        }
-    })
+    @ApiPropertyEnumExtend('榜单类型', oschinaGroups, 'ascend')
     @IsEnum(transformConstantsObjectToEnum(oschinaGroups), { message: validateMessage('type') })
     type: OschinaGroupType
 }
 
 export class OschinaBlogParamDto {
-    @ApiPropertyExtend({
-        description: '博客文章类型',
-        enum: Object.keys(oschinaBlogArticle),
-        schema: {
-            type: 'string',
-            enum: Object.keys(oschinaBlogArticle),
-            example: 'aiLlm',
-            'x-apifox-enum': transformConstantsToOptions(oschinaBlogArticle)
-        }
-    })
+    @ApiPropertyEnumExtend('博客文章类型', oschinaBlogArticle, 'aiLlm')
     @IsEnum(transformConstantsObjectToEnum(oschinaBlogArticle), { message: validateMessage('type') })
     type: oschinaBlogArticleType
 
-    @ApiPropertyExtend({
-        description: '博客文章排序方式',
-        enum: Object.keys(oschinaBlogRankSort),
-        schema: {
-            type: 'string',
-            enum: Object.keys(oschinaBlogRankSort),
-            example: 'time',
-            'x-apifox-enum': transformConstantsToOptions(oschinaBlogRankSort)
-        }
-    })
+    @ApiPropertyEnumExtend('博客文章排序方式', oschinaBlogRankSort, 'time')
     @IsEnum(transformConstantsObjectToEnum(oschinaBlogRankSort), { message: validateMessage('sort') })
     sort: oschinaBlogRankSortType
 }
