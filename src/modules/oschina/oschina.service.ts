@@ -78,4 +78,48 @@ export class OschinaService {
             }) || []
         )
     }
+
+    /**
+     * 获取阅读排行
+     */
+    async getRankRead() {
+        const api = {
+            // 综合
+            overall: {
+                weekly: '/ApiHomeNew/homeListByRankWeek',
+                monthly: '/ApiHomeNew/homeListByRankMonth'
+            },
+            // 咨询
+            news: {
+                weekly: '/news/newReadRankWeek',
+                monthly: '/news/newReadRankMonth'
+            },
+            // 博客
+            blog: {
+                weekly: '/blog/blogReadRankWeek',
+                monthly: '/blog/blogReadRankMonth'
+            }
+        }
+
+        const { data } = await this.httpClientService.request({
+            method: 'get',
+            url: `https://www.oschina.net${api.overall.weekly}`
+        })
+
+        return (
+            data.result.map((item: any) => {
+                return {
+                    title: item.title,
+                    view: item.heat,
+                    url:
+                        item.obj_type === 4
+                            ? `https://www.oschina.net/news_beta/${item.id}`
+                            : item.obj_type === 3
+                              ? `https://my.oschina.net/u/${item.userVo.id}/blog_beta/${item.id}`
+                              : '',
+                    create_time: 0
+                }
+            }) || []
+        )
+    }
 }

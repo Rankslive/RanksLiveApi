@@ -19,4 +19,12 @@ export class OschinaController {
         const { type } = param
         return await this.oschinaService.getGroupsNewListByWeb(type)
     }
+
+    @Get('rank/read')
+    @ApiDescription('获取开源中国阅读榜单')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.oschina.net/readingList/')
+    async getRankRead() {
+        return await this.oschinaService.getRankRead()
+    }
 }
