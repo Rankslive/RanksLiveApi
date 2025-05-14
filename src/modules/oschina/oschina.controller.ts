@@ -27,4 +27,12 @@ export class OschinaController {
     async getRankRead() {
         return await this.oschinaService.getRankRead()
     }
+
+    @Get('headline')
+    @ApiDescription('获取开源中国 · 头条推荐')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://www.oschina.net/index/')
+    async getHeadline() {
+        return await this.oschinaService.getHeadline()
+    }
 }

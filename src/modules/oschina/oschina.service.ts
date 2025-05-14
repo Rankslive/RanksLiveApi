@@ -5,6 +5,7 @@ import dayjs from 'dayjs'
 import { type CheerioAPI, load } from 'cheerio'
 import { ResponseData } from '../../../types/response.data'
 import { HttpClientService } from '@/common/service/http-client.service'
+import { BASE_USER_AGENT } from '@/constants/base.constants'
 
 // 专区列表数据源：https://apiv1.oschina.net/oschinapi/circle/list
 
@@ -118,6 +119,34 @@ export class OschinaService {
                               ? `https://my.oschina.net/u/${item.userVo.id}/blog_beta/${item.id}`
                               : '',
                     create_time: 0
+                }
+            }) || []
+        )
+    }
+
+    /**
+     * 获取头条推荐
+     */
+    async getHeadline() {
+        const { data } = await this.httpClientService.request({
+            method: 'get',
+            url: 'https://apiv1.oschina.net/oschinapi/home/headline',
+            params: {
+                pageNum: 1,
+                pageSize: 10
+            },
+            headers: {
+                'User-Agent': BASE_USER_AGENT
+            }
+        })
+
+        return (
+            data.result.list.map((item: any) => {
+                return {
+                    title: item.name,
+                    view: 0,
+                    url: item.advertUrl,
+                    create_time: dayjs(item.createTime).unix()
                 }
             }) || []
         )
