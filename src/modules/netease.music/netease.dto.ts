@@ -1,4 +1,4 @@
-import { NeteaseConstants } from '@/modules/netease/constants/netease.constants'
+import { NeteaseConstants } from '@/modules/netease.music/constants/netease.constants'
 import { transformConstantsObjectToEnum } from '@/utils/helper'
 import { IsEnum } from 'class-validator'
 import { validateMessage } from '@/utils/validation.prompts'

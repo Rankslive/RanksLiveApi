@@ -1,12 +1,12 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
-import { NeteaseService } from '@/modules/netease/netease.service'
-import { NeteaseConstants } from '@/modules/netease/constants/netease.constants'
-import { NeteaseParamDto } from '@/modules/netease/netease.dto'
+import { NeteaseService } from '@/modules/netease.music/netease.service'
+import { NeteaseConstants } from '@/modules/netease.music/constants/netease.constants'
+import { NeteaseParamDto } from '@/modules/netease.music/netease.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
 
-@Controller('netease')
+@Controller('netease.music')
 @ApiTags('网易云音乐')
 export class NeteaseController {
     constructor(private readonly NeteaseService: NeteaseService) {}
