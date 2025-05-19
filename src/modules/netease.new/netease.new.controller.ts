@@ -8,10 +8,7 @@ import { SourceUrl } from '@/common/decorator/source.url.decorator'
 @Controller('netease.new')
 @ApiTags('网易云新闻')
 export class NeteaseNewController {
-    constructor(
-        private readonly neteaseNewService: NeteaseNewService
-    ) {
-    }
+    constructor(private readonly neteaseNewService: NeteaseNewService) {}
 
     @Get('hot/search')
     @ApiDescription('获取网易云新闻 · 热搜榜')
@@ -44,5 +41,4 @@ export class NeteaseNewController {
     async getTopicRank() {
         return await this.neteaseNewService.getTopicRank()
     }
-
 }

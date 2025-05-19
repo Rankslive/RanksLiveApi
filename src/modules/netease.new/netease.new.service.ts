@@ -5,10 +5,7 @@ import dayjs from 'dayjs'
 
 @Injectable()
 export class NeteaseNewService {
-    constructor(
-        private readonly httpClientService: HttpClientService
-    ) {
-    }
+    constructor(private readonly httpClientService: HttpClientService) {}
 
     /**
      * 获取热搜
@@ -22,14 +19,16 @@ export class NeteaseNewService {
             }
         })
 
-        return data?.data?.hotWordList.map((item: any) => {
-            return {
-                title: item.hotWord,
-                view: item.expNum,
-                url: item.pcSkipUrl || `https://m.163.com/search?keyword=${encodeURIComponent(item.hotWord)}`,
-                create_time: 0
-            }
-        }) || []
+        return (
+            data?.data?.hotWordList.map((item: any) => {
+                return {
+                    title: item.hotWord,
+                    view: item.expNum,
+                    url: item.pcSkipUrl || `https://m.163.com/search?keyword=${encodeURIComponent(item.hotWord)}`,
+                    create_time: 0
+                }
+            }) || []
+        )
     }
 
     /**
@@ -48,14 +47,16 @@ export class NeteaseNewService {
             }
         })
 
-        return data?.data?.cmtDocs.map((item: any) => {
-            return {
-                title: item.doc_title,
-                view: item.hotScore * 1e4,
-                url: `https://c.m.163.com/news/a/${item.docId}.html`,
-                create_time: 0
-            }
-        }) || []
+        return (
+            data?.data?.cmtDocs.map((item: any) => {
+                return {
+                    title: item.doc_title,
+                    view: item.hotScore * 1e4,
+                    url: `https://c.m.163.com/news/a/${item.docId}.html`,
+                    create_time: 0
+                }
+            }) || []
+        )
     }
 
     /**
@@ -70,14 +71,16 @@ export class NeteaseNewService {
             }
         })
 
-        return data?.data?.items.map((item: any) => {
-            return {
-                title: item.title,
-                view: item.hotValue,
-                url: `https://c.m.163.com/news/a/${item.contentId}.html`,
-                create_time: dayjs(item.firstShowedTime).unix()
-            }
-        }) || []
+        return (
+            data?.data?.items.map((item: any) => {
+                return {
+                    title: item.title,
+                    view: item.hotValue,
+                    url: `https://c.m.163.com/news/a/${item.contentId}.html`,
+                    create_time: dayjs(item.firstShowedTime).unix()
+                }
+            }) || []
+        )
     }
 
     /**
@@ -92,13 +95,15 @@ export class NeteaseNewService {
             }
         })
 
-        return data?.data?.items.map((item: any) => {
-            return {
-                title: item.title,
-                view: item.heatScore,
-                url: item.url,
-                create_time: 0
-            }
-        }) || []
+        return (
+            data?.data?.items.map((item: any) => {
+                return {
+                    title: item.title,
+                    view: item.heatScore,
+                    url: item.url,
+                    create_time: 0
+                }
+            }) || []
+        )
     }
 }
