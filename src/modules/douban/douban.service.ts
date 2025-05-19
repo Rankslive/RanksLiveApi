@@ -107,4 +107,25 @@ export class DoubanService {
     async getWeeklyMovie() {
         return await this.getWeeklySubjectCollection('movie')
     }
+
+    /**
+     * 获取全球口碑剧集榜
+     */
+    async getTvGlobalRank() {
+        return await this.getWeeklySubjectCollection('tv_global')
+    }
+
+    /**
+     * 获取国内口碑综艺榜
+     */
+    async getShowChineseRank() {
+        return await this.getWeeklySubjectCollection('show_chinese')
+    }
+
+    /**
+     * 获取国外口碑综艺榜
+     */
+    async getShowGlobalRank() {
+        return await this.getWeeklySubjectCollection('show_global')
+    }
 }

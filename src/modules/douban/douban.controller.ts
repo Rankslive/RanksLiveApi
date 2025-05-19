@@ -22,7 +22,7 @@ export class DoubanController {
     }
 
     @Get('tv_chinese')
-    @ApiDescription('获取豆瓣华语口碑剧集榜')
+    @ApiDescription('获取豆瓣 · 华语口碑剧集榜')
     @ApiMaintainers('lonewolfyx')
     @SourceUrl('https://m.douban.com/subject_collection/tv_chinese_best_weekly')
     async getTvChineseRank() {
@@ -30,10 +30,34 @@ export class DoubanController {
     }
 
     @Get('weekly/movie')
-    @ApiDescription('获取豆瓣一周口碑电影榜')
+    @ApiDescription('获取豆瓣 · 一周口碑电影榜')
     @ApiMaintainers('lonewolfyx')
     @SourceUrl('https://m.douban.com/subject_collection/movie_weekly_best')
     async getWeeklyMovie() {
         return await this.doubanService.getWeeklyMovie()
+    }
+
+    @Get('weekly/tv_global')
+    @ApiDescription('获取豆瓣 · 全球口碑剧集榜')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://m.douban.com/subject_collection/tv_global_best_weekly')
+    async getWeeklyTvGlobal() {
+        return await this.doubanService.getTvGlobalRank()
+    }
+
+    @Get('weekly/show_chinese')
+    @ApiDescription('获取豆瓣 · 国内口碑综艺榜')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://m.douban.com/subject_collection/show_chinese_best_weekly')
+    async getWeeklyShowChinese() {
+        return await this.doubanService.getShowChineseRank()
+    }
+
+    @Get('weekly/show_global')
+    @ApiDescription('获取豆瓣 · 国外口碑综艺榜')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://m.douban.com/subject_collection/show_global_best_weekly')
+    async getWeeklyShowGlobal() {
+        return await this.doubanService.getShowGlobalRank()
     }
 }
