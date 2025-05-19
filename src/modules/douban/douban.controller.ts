@@ -28,4 +28,12 @@ export class DoubanController {
     async getTvChineseRank() {
         return await this.doubanService.getTvChineseRank()
     }
+
+    @Get('weekly/movie')
+    @ApiDescription('获取豆瓣一周口碑电影榜')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://m.douban.com/subject_collection/movie_weekly_best')
+    async getWeeklyMovie() {
+        return await this.doubanService.getWeeklyMovie()
+    }
 }

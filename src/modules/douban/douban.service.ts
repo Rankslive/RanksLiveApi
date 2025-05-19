@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { BASE_USER_AGENT } from '@/constants/base.constants'
-import { douBanType } from './types/douban'
+import { DouBanRankWeeklyType, douBanType, IDouBanRankWeekly } from './types/douban'
 import { HttpClientService } from '@/common/service/http-client.service'
 
 const DOUBAN_APP_USERAGENT = 'api-client/0.1.3 com.douban.frodo/7.100.0 iOS/18.0 model/iPad8,6 network/wifi'
@@ -46,10 +46,28 @@ export class DoubanService {
         })
     }
 
-    async getTvChineseRank() {
+    /**
+     * 获取周口碑数据
+     * @param type
+     * @private
+     */
+    private async getWeeklySubjectCollection(type: DouBanRankWeeklyType) {
+        const apiType: IDouBanRankWeekly = {
+            // 一周口碑电影榜
+            movie: 'movie_weekly_best',
+            // 华语口碑剧集榜
+            tv_chinese: 'tv_chinese_best_weekly',
+            // 全球口碑剧集榜
+            tv_global: 'tv_global_best_weekly',
+            // 国内口碑综艺榜
+            show_chinese: 'show_chinese_best_weekly',
+            // 国外口碑综艺榜
+            show_global: 'show_global_best_weekly'
+        }
+
         const { data } = await this.httpClientService.request({
             method: 'get',
-            url: 'https://m.douban.com/rexxar/api/v2/subject_collection/tv_chinese_best_weekly/items',
+            url: `https://m.douban.com/rexxar/api/v2/subject_collection/${apiType[type]}/items`,
             params: {
                 start: 0,
                 count: 10,
@@ -74,5 +92,19 @@ export class DoubanService {
                 }
             }) || []
         )
+    }
+
+    /**
+     * 获取华语口碑剧集榜
+     */
+    async getTvChineseRank() {
+        return await this.getWeeklySubjectCollection('tv_chinese')
+    }
+
+    /**
+     * 获取一周口碑电影榜
+     */
+    async getWeeklyMovie() {
+        return await this.getWeeklySubjectCollection('movie')
     }
 }
