@@ -6,3 +6,9 @@ import { ApiExtension } from '@nestjs/swagger'
  * @constructor
  */
 export const ApiMaintainers = (authors: string | string[]) => ApiExtension('x-maintainers', authors)
+
+// export const ApiMaintainers = (authors: string | string[]) => ApiExtension('x-maintainers', {
+//     authors,
+//     url: `https://github.com/${authors}`,
+//     avatar: `https://avatars.githubusercontent.com/${authors}`
+// })
