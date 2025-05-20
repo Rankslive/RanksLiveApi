@@ -20,8 +20,7 @@ import { AppleCategory } from '@/modules/apple/constants/apple.constants'
 @Controller('apple')
 @ApiTags('Apple')
 export class AppleController {
-    constructor(private readonly appleService: AppleService) {
-    }
+    constructor(private readonly appleService: AppleService) {}
 
     @Get('rank/app.store/ios/:rankType/:country/:category')
     @ApiDescription('获取 iPhone & iPad AppStore 榜单')

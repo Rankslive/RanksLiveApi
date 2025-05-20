@@ -6,7 +6,6 @@ import { validateMessage } from '@/utils/validation.prompts'
 import { AppleCategory, AppleCountry, AppleRankList } from '@/modules/apple/constants/apple.constants'
 
 export class AppleAppStoreParamDto {
-
     // @ApiPropertyEnumExtend('操作系统类型 ios、mac', AppleSystem, 'ios')
     // @IsEnum(transformConstantsObjectToEnum(AppleSystem), { message: validateMessage('system') })
     // system: AppleSystemType

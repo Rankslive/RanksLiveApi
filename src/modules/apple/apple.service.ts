@@ -6,10 +6,7 @@ import { AppleRankList } from '@/modules/apple/constants/apple.constants'
 
 @Injectable()
 export class AppleService {
-    constructor(
-        private readonly httpClientService: HttpClientService
-    ) {
-    }
+    constructor(private readonly httpClientService: HttpClientService) {}
 
     /**
      * 获取 ios app store 排行榜
@@ -24,7 +21,6 @@ export class AppleService {
         genre: AppleCategoryValueType,
         limit: number = 100
     ) {
-
         const type = AppleRankList[rankType]['value']
 
         const { data } = await this.httpClientService.request({
@@ -35,14 +31,15 @@ export class AppleService {
             }
         })
 
-        return data?.feed?.entry.map((item: any) => {
-            return {
-                title: item['title']['label'],
-                view: 0,
-                url: item['id']['label'],
-                create_time: 0
-            }
-        }) || []
+        return (
+            data?.feed?.entry.map((item: any) => {
+                return {
+                    title: item['title']['label'],
+                    view: 0,
+                    url: item['id']['label'],
+                    create_time: 0
+                }
+            }) || []
+        )
     }
-
 }
