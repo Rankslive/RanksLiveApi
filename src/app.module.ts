@@ -34,6 +34,7 @@ import { CommonModule } from './common/module/common.module'
 import { CloudTencentModule } from './modules/cloud.tencent/cloud.tencent.module'
 import { XiaohongshuModule } from './modules/xiaohongshu/xiaohongshu.module'
 import { NeteaseNewModule } from './modules/netease.new/netease.new.module'
+import { AppleModule } from './modules/apple/apple.module'
 
 @Module({
     imports: [
@@ -70,7 +71,8 @@ import { NeteaseNewModule } from './modules/netease.new/netease.new.module'
         OschinaModule,
         CloudTencentModule,
         XiaohongshuModule,
-        NeteaseNewModule
+        NeteaseNewModule,
+        AppleModule
 
     ],
     providers: [
