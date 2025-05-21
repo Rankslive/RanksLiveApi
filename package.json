@@ -18,7 +18,7 @@
         "start": "cross-env NODE_ENV=production nest start",
         "start:debug": "nest start --debug --watch",
         "start:dev": "cross-env NODE_ENV=development nest start --watch",
-        "start:prod": "node dist/main",
+        "start:prod": "node dist/src/main.js",
         "test": "jest",
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
