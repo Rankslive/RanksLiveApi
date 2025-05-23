@@ -1,10 +1,16 @@
-import { AppleCategoryType, AppleCountryType, AppleMusicType, AppleRankType } from '@/modules/apple/types/apple'
+import {
+    AppleCategoryType,
+    AppleCountryType,
+    AppleMusicDailyType,
+    AppleMusicType,
+    AppleRankType
+} from '@/modules/apple/types/apple'
 import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
 import { IsEnum } from 'class-validator'
 import { transformConstantsObjectToEnum } from '@/utils/helper'
 import { validateMessage } from '@/utils/validation.prompts'
 import { AppleCategory, AppleCountry, AppleRankList } from '@/modules/apple/constants/apple.constants'
-import { AppleMusicGenres } from '@/modules/apple/constants/apple.music.constants'
+import { AppleMusicDaily, AppleMusicGenres } from '@/modules/apple/constants/apple.music.constants'
 
 export class AppleAppStoreParamDto {
     // @ApiPropertyEnumExtend('操作系统类型 ios、mac', AppleSystem, 'ios')
@@ -36,4 +42,10 @@ export class AppleMusicParamDto {
     @ApiPropertyEnumExtend('音乐类型', AppleMusicGenres, 'music')
     @IsEnum(transformConstantsObjectToEnum(AppleMusicGenres), { message: validateMessage('type') })
     type: AppleMusicType
+}
+
+export class AppleMusicDailyParamDto {
+    @ApiPropertyEnumExtend('国家归属', AppleMusicDaily, 'global')
+    @IsEnum(transformConstantsObjectToEnum(AppleMusicDaily), { message: validateMessage('country') })
+    country: AppleMusicDailyType
 }

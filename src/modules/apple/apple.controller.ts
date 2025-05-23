@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiTags } from '@nestjs/swagger'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { AppleAppStoreParamDto, AppleMusicParamDto } from '@/modules/apple/apple.dto'
+import { AppleAppStoreParamDto, AppleMusicDailyParamDto, AppleMusicParamDto } from '@/modules/apple/apple.dto'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { AppleService } from '@/modules/apple/apple.service'
@@ -44,7 +44,7 @@ export class AppleController {
     @Get('rank/app.store/ios/:rankType/:country/:category')
     @ApiDescription('获取 iPhone & iPad AppStore 榜单')
     @ApiMaintainers('lonewolfyx')
-    @SourceUrl('https://apps.apple.com/cn/charts/iphone')
+    @SourceUrl('https://apps.apple.com/charts/iphone')
     async getIosAppStoreRank(@Param() param: AppleAppStoreParamDto) {
         const { rankType, country, category } = param
 
@@ -58,5 +58,14 @@ export class AppleController {
     async getMusicHotSongRank(@Param() param: AppleMusicParamDto) {
         const { country, type } = param
         return await this.appleMusicService.getMusicHotSongRank(country, AppleMusicGenres[type]['id'])
+    }
+
+    @Get('rank/apple.music/daily-global-top/:country')
+    @ApiDescription('获取 Apple Music 每周热门 100 首')
+    @ApiMaintainers('lonewolfyx')
+    @SourceUrl('https://music.apple.com/new/top-charts')
+    async getDailyGlobalTopCharts(@Param() param: AppleMusicDailyParamDto) {
+        const { country } = param
+        return await this.appleMusicService.getDailyGlobalTopCharts(country)
     }
 }

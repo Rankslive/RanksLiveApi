@@ -1,3 +1,5 @@
+import * as console from 'node:console'
+
 export const AppleMusicGenres = {
     blues: { name: '蓝调', value: 2, id: 2 },
     children: { name: '儿童音乐', value: 4, id: 4 },
@@ -32,4 +34,43 @@ export const AppleMusicGenres = {
     african: { name: '非洲音乐', value: 1203, id: 1203 },
     samba: { name: '桑巴', value: 1227, id: 1227 },
     'C-Pop': { name: 'C-Pop', value: 1250, id: 1250 }
+} as const
+
+export const AppleMusicDaily = {
+    global: {
+        name: '每周热门 100 首：全球',
+        value: 'pl.921750b485a6496ea58b16d46c097557'
+    },
+    china: {
+        name: '每周热门 100 首：中国大陆',
+        value: 'pl.939cf56e73c44970b81fd9648f859223'
+    },
+    hongkong: {
+        name: '每周热门 100 首：中国香港',
+        value: 'pl.f600030d19174703ab6e37605a6bec08'
+    },
+    korea: {
+        name: '每周热门 100 首：韩国',
+        value: 'pl.4a5c566712634cb1914ec3d104a9e4db'
+    },
+    japan: {
+        name: '每周热门 100 首：日本',
+        value: 'pl.417f0970ea794ee9b7c819f6d2324821'
+    },
+    us: {
+        name: '每周热门 100 首：美国',
+        value: 'pl.6f4d1d4d6eae48579cead6a7bc2a0c0d'
+    },
+    uk: {
+        name: '每周热门 100 首：英国',
+        value: 'pl.23a3552e92134bbbb8bc7acbc27c4e5a'
+    },
+    australia: {
+        name: '每周热门 100 首：澳大利亚',
+        value: 'pl.41b58acae5f2447ebb0047c8a62ad8d6'
+    },
+    canada: {
+        name: '每周热门 100 首：加拿大',
+        value: 'pl.cb6262ec61184f689970faeb9fdc2464'
+    }
 } as const
