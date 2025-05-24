@@ -1,13 +1,14 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { ZhihuService } from '@/modules/zhihu/zhihu.service'
 import { zhihuConstants, zhihuCreatorDomain } from '@/modules/zhihu/constants/zhihu.constants'
 import { ZhiHuHotQuestionDto, ZhiHuPotentialQuestionDto } from '@/modules/zhihu/zhihu.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('zhihu')
-@ApiTags('知乎')
+@ApiPlatform('知乎')
 export class ZhihuController {
     constructor(private readonly ZhihuService: ZhihuService) {}
 

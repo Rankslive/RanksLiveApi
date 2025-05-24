@@ -1,13 +1,14 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { AcfunService } from '@/modules/acfun/acfun.service'
 import { AcfunConstants } from '@/modules/acfun/constants/acfun.constants'
 import { AcfunParamDto } from '@/modules/acfun/acfun.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('acfun')
-@ApiTags('AcFun弹幕视频网')
+@ApiPlatform('AcFun弹幕视频网')
 export class AcfunController {
     constructor(private readonly AcfunService: AcfunService) {}
 

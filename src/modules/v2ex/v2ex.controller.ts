@@ -1,11 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { V2exService } from '@/modules/v2ex/v2ex.service'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('v2ex')
-@ApiTags('v2ex')
+@ApiPlatform('v2ex')
 export class V2exController {
     constructor(private readonly v2exService: V2exService) {}
 

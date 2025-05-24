@@ -1,11 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { SspaiService } from '@/modules/sspai/sspai.service'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('sspai')
-@ApiTags('少数派')
+@ApiPlatform('少数派')
 export class SspaiController {
     constructor(private readonly sspaiService: SspaiService) {}
 

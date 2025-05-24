@@ -1,14 +1,15 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { DoubanService } from '@/modules/douban/douban.service'
 import { DoubanConstants } from '@/modules/douban/constants/douban.constants'
 import { DouBanParamDto } from '@/modules/douban/douban.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('douban')
-@ApiTags('豆瓣')
+@ApiPlatform('豆瓣')
 export class DoubanController {
     constructor(private readonly doubanService: DoubanService) {}
 

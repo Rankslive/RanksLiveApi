@@ -1,14 +1,14 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiTags } from '@nestjs/swagger'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
 import { OschinaService } from '@/modules/oschina/oschina.service'
 import { OschinaBlogParamDto, OschinaGroupParamDto } from '@/modules/oschina/oschina.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
 import { oschinaBlogArticle } from '@/modules/oschina/constants/oschina.constants'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('oschina')
-@ApiTags('开源中国')
+@ApiPlatform('开源中国')
 export class OschinaController {
     constructor(private readonly oschinaService: OschinaService) {}
 

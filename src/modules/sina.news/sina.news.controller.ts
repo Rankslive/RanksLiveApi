@@ -1,12 +1,13 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { SinaNewsService } from '@/modules/sina.news/sina.news.service'
 import { SinaNewsParamDto } from '@/modules/sina.news/sina.news.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('sina.news')
-@ApiTags('新浪新闻')
+@ApiPlatform('新浪新闻')
 export class SinaNewsController {
     constructor(private readonly sinaNewsService: SinaNewsService) {}
 

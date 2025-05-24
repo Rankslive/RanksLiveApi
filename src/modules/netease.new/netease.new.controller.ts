@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiTags } from '@nestjs/swagger'
 import { NeteaseNewService } from '@/modules/netease.new/netease.new.service'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('netease.new')
-@ApiTags('网易云新闻')
+@ApiPlatform('网易云新闻')
 export class NeteaseNewController {
     constructor(private readonly neteaseNewService: NeteaseNewService) {}
 

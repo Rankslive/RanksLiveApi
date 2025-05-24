@@ -1,5 +1,4 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiTags } from '@nestjs/swagger'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
 import { AppleAppStoreParamDto, AppleMusicDailyParamDto, AppleMusicParamDto } from '@/modules/apple/apple.dto'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
@@ -8,6 +7,7 @@ import { AppleService } from '@/modules/apple/apple.service'
 import { AppleCategory } from '@/modules/apple/constants/apple.constants'
 import { AppleMusicService } from '@/modules/apple/apple.music.service'
 import { AppleMusicGenres } from '@/modules/apple/constants/apple.music.constants'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 // https://podcasts.apple.com/cn/browse
 // https://rss.marketingtools.apple.com/
@@ -34,7 +34,7 @@ import { AppleMusicGenres } from '@/modules/apple/constants/apple.music.constant
 // 音乐视频 https://itunes.apple.com/us/rss/topmusicvideos/limit=200/genre=31/json
 
 @Controller('apple')
-@ApiTags('Apple')
+@ApiPlatform('Apple')
 export class AppleController {
     constructor(
         private readonly appleService: AppleService,

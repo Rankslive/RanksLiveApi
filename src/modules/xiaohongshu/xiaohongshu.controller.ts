@@ -1,11 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
 import { XiaohongshuService } from '@/modules/xiaohongshu/xiaohongshu.service'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('xiaohongshu')
-@ApiTags('小红书')
+@ApiPlatform('小红书')
 export class XiaohongshuController {
     constructor(private readonly xiaoHongShuService: XiaohongshuService) {}
 

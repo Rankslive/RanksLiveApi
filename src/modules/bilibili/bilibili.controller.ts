@@ -1,13 +1,14 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { BilibiliService } from '@/modules/bilibili/bilibili.service'
 import { BiliBiliRank, useBaseRank, useSeasonRank } from '@/modules/bilibili/constants/bilibili.constants'
 import { BiliBiliRankParamDto } from '@/modules/bilibili/bilibili.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('bilibili')
-@ApiTags('哔哩哔哩')
+@ApiPlatform('哔哩哔哩')
 export class BilibiliController {
     constructor(private readonly BiliBiliService: BilibiliService) {}
 

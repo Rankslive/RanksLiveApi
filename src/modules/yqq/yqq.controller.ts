@@ -1,13 +1,14 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { YqqService } from '@/modules/yqq/yqq.service'
 import { YQqConstants } from '@/modules/yqq/constants/y.qq.constants'
 import { YQqParamDto } from '@/modules/yqq/yqq.dto'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('yqq')
-@ApiTags('QQ 音乐')
+@ApiPlatform('QQ 音乐')
 export class YqqController {
     constructor(private readonly YqqService: YqqService) {}
 

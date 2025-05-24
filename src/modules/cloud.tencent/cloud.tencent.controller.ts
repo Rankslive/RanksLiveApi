@@ -1,5 +1,4 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiTags } from '@nestjs/swagger'
 import { CloudTencentService } from '@/modules/cloud.tencent/cloud.tencent.service'
 import { ApiDescription } from '@/common/decorator/api.description.decorator'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
@@ -9,9 +8,10 @@ import {
     cloudTencentZoneConstants
 } from '@/modules/cloud.tencent/constants/cloud.tencent.constants'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('cloud.tencent')
-@ApiTags('腾讯云')
+@ApiPlatform('腾讯云')
 export class CloudTencentController {
     constructor(private readonly cloudTencentService: CloudTencentService) {}
 

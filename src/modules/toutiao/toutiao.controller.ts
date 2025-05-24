@@ -1,11 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiOperation } from '@nestjs/swagger'
 import { ToutiaoService } from '@/modules/toutiao/toutiao.service'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
 
 @Controller('toutiao')
-@ApiTags('今日头条')
+@ApiPlatform('今日头条')
 export class ToutiaoController {
     constructor(private readonly ToutiaoService: ToutiaoService) {}
 
