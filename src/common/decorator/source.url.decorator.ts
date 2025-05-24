@@ -9,8 +9,5 @@ export const SOURCE_URL_KEY = 'source_url'
  * @constructor
  */
 export const SourceUrl = (url: string) => {
-    return applyDecorators(
-        ApiExtension('x-source-url', url),
-        SetMetadata(SOURCE_URL_KEY, url)
-    )
+    return applyDecorators(ApiExtension('x-source-url', url), SetMetadata(SOURCE_URL_KEY, url))
 }

@@ -1,5 +1,4 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import { BaiduService } from '@/modules/baidu/baidu.service'
 import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
 import { SourceUrl } from '@/common/decorator/source.url.decorator'
@@ -18,6 +17,7 @@ export class BaiduController {
     async getBaiduHot() {
         return await this.BaiduService.getBaiduHot('realtime')
     }
+
     @Get('tieba/discussion')
     @ApiDescription('获取百度贴吧热议榜')
     @ApiMaintainers('lonewolfyx')

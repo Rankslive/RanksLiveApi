@@ -9,8 +9,5 @@ export const API_DESCRIPTION_KEY = 'api_description'
  * @constructor
  */
 export const ApiDescription = (content: string) => {
-    return applyDecorators(
-        ApiOperation({ summary: content }),
-        SetMetadata(API_DESCRIPTION_KEY, content)
-    )
+    return applyDecorators(ApiOperation({ summary: content }), SetMetadata(API_DESCRIPTION_KEY, content))
 }
