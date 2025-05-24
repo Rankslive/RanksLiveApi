@@ -35,6 +35,7 @@ import { CloudTencentModule } from './modules/cloud.tencent/cloud.tencent.module
 import { XiaohongshuModule } from './modules/xiaohongshu/xiaohongshu.module'
 import { NeteaseNewModule } from './modules/netease.new/netease.new.module'
 import { AppleModule } from './modules/apple/apple.module'
+import { ApiMetadataReader } from '@/common/meta.data/api.meta.data.reader'
 
 @Module({
     imports: [
@@ -76,6 +77,7 @@ import { AppleModule } from './modules/apple/apple.module'
 
     ],
     providers: [
+        ApiMetadataReader,
         // 全局 异常过滤器
         { provide: APP_FILTER, useClass: AllExceptionFilter },
         // 全局 响应拦截器
