@@ -36,6 +36,7 @@ import { XiaohongshuModule } from './modules/xiaohongshu/xiaohongshu.module'
 import { NeteaseNewModule } from './modules/netease.new/netease.new.module'
 import { AppleModule } from './modules/apple/apple.module'
 import { ApiMetadataReader } from '@/common/meta.data/api.meta.data.reader'
+import { MsnModule } from './modules/msn/msn.module'
 
 @Module({
     imports: [
@@ -73,7 +74,8 @@ import { ApiMetadataReader } from '@/common/meta.data/api.meta.data.reader'
         CloudTencentModule,
         XiaohongshuModule,
         NeteaseNewModule,
-        AppleModule
+        AppleModule,
+        MsnModule
 
     ],
     providers: [

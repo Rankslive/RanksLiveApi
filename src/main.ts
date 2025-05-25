@@ -25,7 +25,9 @@ async function bootstrap() {
 
     const config = new DocumentBuilder()
         .setTitle('全球热门榜单数据供应平台')
-        .setDescription('提供全球网全平台热榜聚合服务，实时接入来自音乐流媒体、影视平台、应用商店、社交媒体趋势等 20+ 类别的权威榜单数据，助力追踪全网热点。')
+        .setDescription(
+            '提供全球网全平台热榜聚合服务，实时接入来自音乐流媒体、影视平台、应用商店、社交媒体趋势等 20+ 类别的权威榜单数据，助力追踪全网热点。'
+        )
         .setVersion(version)
         .build()
     const documentFactory = () => SwaggerModule.createDocument(app, config)
