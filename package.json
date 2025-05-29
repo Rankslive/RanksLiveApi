@@ -18,12 +18,13 @@
         "start": "cross-env NODE_ENV=production nest start",
         "start:debug": "nest start --debug --watch",
         "start:dev": "cross-env NODE_ENV=development nest start --watch",
-        "start:prod": "node dist/src/main.js",
+        "start:prod": "node dist/main",
         "test": "jest",
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./test/jest-e2e.json",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "create-node": "tsx ./test/node.test.ts"
     },
     "dependencies": {
         "@dotenvx/dotenvx": "^1.39.0",
@@ -78,6 +79,7 @@
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
         "tsconfig-paths": "^4.2.0",
+        "tsx": "^4.19.4",
         "typescript": "^5.7.3"
     },
     "license": "UNLICENSED",
