@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common'
 import { version } from '../package.json'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
+import { ApiMaintainers } from './common/decorator/api.maintainers.decorator'
 
 @Controller('')
 @ApiTags('ApiHub')

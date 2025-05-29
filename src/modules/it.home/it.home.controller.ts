@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { ItHomeService } from '@/modules/it.home/it.home.service'
-import { ItHomeConstants } from '@/modules/it.home/constants/it.home.constants'
-import { iTHomeParamDto } from '@/modules/it.home/it.home.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ItHomeService } from './it.home.service'
+import { ItHomeConstants } from './constants/it.home.constants'
+import { iTHomeParamDto } from './it.home.dto'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('it.home')
 @ApiPlatform('iT 之家')

@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common'
-import { sign } from '@/utils/yqq/sign'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
 import { RankListItem, YQqTopType } from './types/y.qq'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { sign } from '../../utils/yqq/sign'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 @Injectable()
 export class YqqService {

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import { uuid } from '@/utils/helper'
 import dayjs from 'dayjs'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from 'src/common/service/http-client.service'
+import { uuid } from '../../utils/helper'
 
 @Injectable()
 export class IfengNewsService {

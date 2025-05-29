@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { ZhihuService } from '@/modules/zhihu/zhihu.service'
-import { zhihuConstants, zhihuCreatorDomain } from '@/modules/zhihu/constants/zhihu.constants'
-import { ZhiHuHotQuestionDto, ZhiHuPotentialQuestionDto } from '@/modules/zhihu/zhihu.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ZhihuService } from './zhihu.service'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { zhihuConstants, zhihuCreatorDomain } from './constants/zhihu.constants'
+import { ZhiHuHotQuestionDto, ZhiHuPotentialQuestionDto } from './zhihu.dto'
 
 @Controller('zhihu')
 @ApiPlatform('知乎')

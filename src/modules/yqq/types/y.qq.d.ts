@@ -1,4 +1,4 @@
-import { YQqConstants } from '@/modules/yqq/constants/y.qq.constants'
+import { YQqConstants } from '../constants/y.qq.constants'
 
 export type YQqTopType = (typeof YQqConstants)[keyof typeof YQqConstants]['value']
 

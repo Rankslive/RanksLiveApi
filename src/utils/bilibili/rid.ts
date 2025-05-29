@@ -1,7 +1,7 @@
-import request from '@/utils/request'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
+import request from '../request'
 import dayjs from 'dayjs'
-import { md5 } from '@/utils/md5'
+import { md5 } from '../md5'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 export const getImgFormatConfig = async (): Promise<{ imgKey: string; subKey: string }> => {
     const result = await request({

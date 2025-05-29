@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { XiaohongshuService } from '@/modules/xiaohongshu/xiaohongshu.service'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { XiaohongshuService } from './xiaohongshu.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('xiaohongshu')
 @ApiPlatform('小红书')

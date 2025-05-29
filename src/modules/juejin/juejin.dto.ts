@@ -1,9 +1,9 @@
-import { JuejinAuthorConstants, JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
 import { IsEnum } from 'class-validator'
 import { JueJinType } from './types/juejin'
-import { transformConstantsObjectToEnum } from '@/utils/helper'
-import { validateMessage } from '@/utils/validation.prompts'
-import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
+import { JuejinAuthorConstants, JuejinConstants } from './constants/juejin.constants'
+import { ApiPropertyEnumExtend } from '../../common/decorator/api.property.enum.extend.decorator'
+import { transformConstantsObjectToEnum } from '../../utils/helper'
+import { validateMessage } from '../../utils/validation.prompts'
 
 export class JuejinArticleDto {
     @ApiPropertyEnumExtend('榜单类型', JuejinConstants, 'all')

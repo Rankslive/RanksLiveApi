@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ResponseData } from '../../../types/response.data'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
 
 @Injectable()
 export class DouyinService {

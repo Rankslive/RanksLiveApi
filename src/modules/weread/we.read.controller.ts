@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { WeReadService } from '@/modules/weread/we.read.service'
-import { WeReadConstants } from '@/modules/weread/constants/we.read.constants'
-import { WeReadParamDto } from '@/modules/weread/we.read.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { WeReadService } from './we.read.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { WeReadParamDto } from './we.read.dto'
+import { WeReadConstants } from './constants/we.read.constants'
 
 @Controller('we.read')
 @ApiPlatform('微信读书')

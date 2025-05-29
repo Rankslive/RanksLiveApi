@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { WeiboService } from '@/modules/weibo/weibo.service'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { WeiboService } from './weibo.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('weibo')
 @ApiPlatform('微博')

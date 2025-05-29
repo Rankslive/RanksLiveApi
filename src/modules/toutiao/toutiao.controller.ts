@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { ToutiaoService } from '@/modules/toutiao/toutiao.service'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ToutiaoService } from './toutiao.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('toutiao')
 @ApiPlatform('今日头条')

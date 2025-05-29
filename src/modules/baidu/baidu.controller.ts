@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
-import { BaiduService } from '@/modules/baidu/baidu.service'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { BaiduService } from './baidu.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('baidu')
 @ApiPlatform('百度')

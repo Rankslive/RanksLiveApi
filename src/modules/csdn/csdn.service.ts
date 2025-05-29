@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
+import { HttpClientService } from '../../common/service/http-client.service'
 
 @Injectable()
 export class CsdnService {

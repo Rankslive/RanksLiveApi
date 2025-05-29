@@ -1,5 +1,3 @@
-import { AcfunChannel } from '../types/acfun'
-
 export const AcfunConstants = {
     all: { name: '综合榜单', channelId: '', subChannelId: '' },
     drama: { name: '番剧', channelId: 155, subChannelId: '' },

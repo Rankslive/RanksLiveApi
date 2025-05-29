@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { ThePaperService } from '@/modules/the.paper/the.paper.service'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ThePaperService } from './the.paper.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('the.paper')
 @ApiPlatform('澎湃新闻')

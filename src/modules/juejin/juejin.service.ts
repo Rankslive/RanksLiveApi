@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 const gentWebId = (): string => {
     const generateRandomPart = (e: number) => (e ^ ((Math.random() * 16) >> (e / 4))).toString(10)

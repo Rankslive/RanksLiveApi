@@ -1,9 +1,9 @@
 import { oschinaBlogArticleType, oschinaBlogRankSortType, OschinaGroupType } from './types/oschina'
 import { IsEnum } from 'class-validator'
-import { transformConstantsObjectToEnum } from '@/utils/helper'
-import { oschinaBlogArticle, oschinaBlogRankSort, oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
-import { validateMessage } from '@/utils/validation.prompts'
-import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
+import { validateMessage } from '../../utils/validation.prompts'
+import { oschinaBlogArticle, oschinaBlogRankSort, oschinaGroups } from './constants/oschina.constants'
+import { ApiPropertyEnumExtend } from '../../common/decorator/api.property.enum.extend.decorator'
+import { transformConstantsObjectToEnum } from '../../utils/helper'
 
 export class OschinaGroupParamDto {
     @ApiPropertyEnumExtend('榜单类型', oschinaGroups, 'ascend')

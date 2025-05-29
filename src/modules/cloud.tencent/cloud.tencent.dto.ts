@@ -1,12 +1,9 @@
-import { cloudTencentTypeKey, cloudTencentZoneTypeKey } from '@/modules/cloud.tencent/types/cloud.tencent'
-import { transformConstantsObjectToEnum } from '@/utils/helper'
-import {
-    cloudTencentConstants,
-    cloudTencentZoneConstants
-} from '@/modules/cloud.tencent/constants/cloud.tencent.constants'
 import { IsEnum } from 'class-validator'
-import { validateMessage } from '@/utils/validation.prompts'
-import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
+import { ApiPropertyEnumExtend } from '../../common/decorator/api.property.enum.extend.decorator'
+import { cloudTencentConstants, cloudTencentZoneConstants } from './constants/cloud.tencent.constants'
+import { transformConstantsObjectToEnum } from '../../utils/helper'
+import { cloudTencentTypeKey, cloudTencentZoneTypeKey } from './types/cloud.tencent'
+import { validateMessage } from '../../utils/validation.prompts'
 
 export class CloudTencentParamDto {
     @ApiPropertyEnumExtend('文章类型', cloudTencentConstants, 'cloud')

@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { ResponseData } from '../../../types/response.data'
-import { encodeRid } from '@/utils/bilibili/rid'
 import { BiliBiliSeasonType } from './types/bilibili'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { encodeRid } from '../../utils/bilibili/rid'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 @Injectable()
 export class BilibiliService {

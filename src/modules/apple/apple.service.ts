@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
-import { HttpClientService } from '@/common/service/http-client.service'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
-import { AppleCategoryValueType, AppleCountryType, AppleRankType } from '@/modules/apple/types/apple'
-import { AppleRankList } from '@/modules/apple/constants/apple.constants'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { AppleCategoryValueType, AppleCountryType, AppleRankType } from './types/apple'
+import { AppleRankList } from './constants/apple.constants'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 @Injectable()
 export class AppleService {

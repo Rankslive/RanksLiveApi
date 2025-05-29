@@ -1,20 +1,20 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiOperation } from '@nestjs/swagger'
-import { DoubanService } from '@/modules/douban/douban.service'
-import { DoubanConstants } from '@/modules/douban/constants/douban.constants'
-import { DouBanParamDto } from '@/modules/douban/douban.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { DoubanService } from './douban.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from 'src/common/decorator/source.url.decorator'
+import { DouBanParamDto } from './douban.dto'
+import { DoubanConstants } from './constants/douban.constants'
 
 @Controller('douban')
 @ApiPlatform('豆瓣')
 export class DoubanController {
-    constructor(private readonly doubanService: DoubanService) {}
+    constructor(private readonly doubanService: DoubanService) {
+    }
 
     @Get('real/:type')
-    @ApiOperation({ summary: '获取豆瓣榜单 · 书影音、电影、电视榜' })
+    @ApiDescription('获取豆瓣榜单 · 书影音、电影、电视榜')
     @ApiMaintainers('lonewolfyx')
     @SourceUrl('https://m.douban.com/subject_collection/subject_real_time_hotest')
     async getSubjectRank(@Param() param: DouBanParamDto): Promise<any> {

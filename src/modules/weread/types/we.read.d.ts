@@ -1,4 +1,4 @@
-import { WeReadConstants } from '@/modules/weread/constants/we.read.constants'
+import { WeReadConstants } from '../constants/we.read.constants'
 
 export type WeReadCategoryType = (typeof WeReadConstants)[keyof typeof WeReadConstants]['value']
 

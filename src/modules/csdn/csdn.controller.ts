@@ -1,15 +1,16 @@
 import { Controller, Get, Query } from '@nestjs/common'
 import { CsdnService } from './csdn.service'
 import { ApiOperation } from '@nestjs/swagger'
-import { CsdnConstants } from '@/modules/csdn/constants/csdn.constants'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { CsdnConstants } from './constants/csdn.constants'
 
 @Controller('csdn')
 @ApiPlatform('CSDN')
 export class CsdnController {
-    constructor(private readonly csdnService: CsdnService) {}
+    constructor(private readonly csdnService: CsdnService) {
+    }
 
     @Get('article/hot-rank')
     @ApiOperation({ summary: '获取CSDN全站综合热榜' })

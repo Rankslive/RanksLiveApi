@@ -8,11 +8,11 @@ import {
 } from '@nestjs/common'
 import { HttpArgumentsHost } from '@nestjs/common/interfaces'
 import { Request, Response } from 'express'
-import { ResponseDto } from '@/common/dto/response.dto'
 import { HttpException } from '@nestjs/common/exceptions/http.exception'
 import { isArray } from 'radash'
-import { SERVER_INTERNAL_ERROR } from '@/constants/response.constants'
 import * as process from 'node:process'
+import { ResponseDto } from '../dto/response.dto'
+import { SERVER_INTERNAL_ERROR } from '../../constants/response.constants'
 
 interface ErrorResponse {
     message: number | number[] | string | string[]

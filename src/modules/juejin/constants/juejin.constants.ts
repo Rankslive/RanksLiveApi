@@ -1,4 +1,4 @@
-import { filterObject } from '@/utils/helper'
+import { filterObject } from '../../../utils/helper'
 
 export const JuejinConstants = {
     all: {

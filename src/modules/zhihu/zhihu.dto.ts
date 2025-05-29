@@ -1,9 +1,9 @@
-import { zhihuCreatorDomain, zhihuPeriod, zhihuSort } from '@/modules/zhihu/constants/zhihu.constants'
 import { IsEnum } from 'class-validator'
-import { validateMessage } from '@/utils/validation.prompts'
 import { DomainType, PeriodType, SortType } from './types/zhihu'
-import { transformConstantsObjectToEnum } from '@/utils/helper'
-import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
+import { zhihuCreatorDomain, zhihuPeriod, zhihuSort } from './constants/zhihu.constants'
+import { validateMessage } from '../../utils/validation.prompts'
+import { ApiPropertyEnumExtend } from '../../common/decorator/api.property.enum.extend.decorator'
+import { transformConstantsObjectToEnum } from '../../utils/helper'
 
 export class ZhiHuPotentialQuestionDto {
     @ApiPropertyEnumExtend('榜单类型', zhihuCreatorDomain, 'all')

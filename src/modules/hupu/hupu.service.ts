@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { ResponseData } from '../../../types/response.data'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 const moduleName = {
     basketball: '篮球热榜',

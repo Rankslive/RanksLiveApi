@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common'
-import request from '@/utils/request'
 import { ResponseData } from '../../../types/response.data'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
 
 type WeiboDataType = 'hot' | 'entertainment'
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import { HttpClientService } from '@/common/service/http-client.service'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
 import dayjs from 'dayjs'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 @Injectable()
 export class NeteaseNewService {

@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { OschinaService } from '@/modules/oschina/oschina.service'
-import { OschinaBlogParamDto, OschinaGroupParamDto } from '@/modules/oschina/oschina.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { oschinaBlogArticle } from '@/modules/oschina/constants/oschina.constants'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { OschinaService } from './oschina.service'
+import { OschinaBlogParamDto, OschinaGroupParamDto } from './oschina.dto'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { oschinaBlogArticle } from './constants/oschina.constants'
 
 @Controller('oschina')
 @ApiPlatform('开源中国')

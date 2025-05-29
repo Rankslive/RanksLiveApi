@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
-import { NeteaseNewService } from '@/modules/netease.new/netease.new.service'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { NeteaseNewService } from './netease.new.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
 
 @Controller('netease.new')
 @ApiPlatform('网易云新闻')

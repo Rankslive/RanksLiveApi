@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { AcfunService } from '@/modules/acfun/acfun.service'
-import { AcfunConstants } from '@/modules/acfun/constants/acfun.constants'
-import { AcfunParamDto } from '@/modules/acfun/acfun.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { AcfunService } from './acfun.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { AcfunParamDto } from './acfun.dto'
+import { AcfunConstants } from './constants/acfun.constants'
 
 @Controller('acfun')
 @ApiPlatform('AcFun弹幕视频网')

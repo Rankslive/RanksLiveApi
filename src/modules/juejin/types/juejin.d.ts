@@ -1,3 +1,3 @@
-import { JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
+import { JuejinConstants } from '../constants/juejin.constants'
 
 export type JueJinType = keyof typeof JuejinConstants

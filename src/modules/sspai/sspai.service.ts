@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
 
 @Injectable()
 export class SspaiService {

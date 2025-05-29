@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { ResponseData } from '../../../types/response.data'
 import dayjs from 'dayjs'
 import { load } from 'cheerio'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
 
 @Injectable()
 export class HistoryService {

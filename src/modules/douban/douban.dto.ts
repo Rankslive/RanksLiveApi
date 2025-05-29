@@ -1,8 +1,8 @@
-import { DoubanConstants } from '@/modules/douban/constants/douban.constants'
 import { IsEnum } from 'class-validator'
-import { transformConstantsObjectToEnum } from '@/utils/helper'
-import { validateMessage } from '@/utils/validation.prompts'
-import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
+import { ApiPropertyEnumExtend } from '../../common/decorator/api.property.enum.extend.decorator'
+import { transformConstantsObjectToEnum } from '../../utils/helper'
+import { DoubanConstants } from './constants/douban.constants'
+import { validateMessage } from '../../utils/validation.prompts'
 
 export class DouBanParamDto {
     @ApiPropertyEnumExtend('榜单类型', DoubanConstants, 'subject')

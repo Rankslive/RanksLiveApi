@@ -1,13 +1,13 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { AppleAppStoreParamDto, AppleMusicDailyParamDto, AppleMusicParamDto } from '@/modules/apple/apple.dto'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { AppleService } from '@/modules/apple/apple.service'
-import { AppleCategory } from '@/modules/apple/constants/apple.constants'
-import { AppleMusicService } from '@/modules/apple/apple.music.service'
-import { AppleMusicGenres } from '@/modules/apple/constants/apple.music.constants'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { AppleService } from './apple.service'
+import { AppleMusicService } from './apple.music.service'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { AppleAppStoreParamDto, AppleMusicDailyParamDto, AppleMusicParamDto } from './apple.dto'
+import { AppleCategory } from './constants/apple.constants'
+import { AppleMusicGenres } from './constants/apple.music.constants'
 
 // https://podcasts.apple.com/cn/browse
 // https://rss.marketingtools.apple.com/

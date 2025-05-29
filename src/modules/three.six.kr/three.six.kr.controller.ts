@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { ThreeSixKrService } from '@/modules/three.six.kr/three.six.kr.service'
-import { ThreeSixKrConstants } from '@/modules/three.six.kr/constants/three.six.kr.constants'
-import { ThreeSixKrParamDto } from '@/modules/three.six.kr/three.six.kr.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ThreeSixKrService } from './three.six.kr.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { ThreeSixKrParamDto } from './three.six.kr.dto'
+import { ThreeSixKrConstants } from './constants/three.six.kr.constants'
 
 @Controller('36kr')
 @ApiPlatform('36kr')

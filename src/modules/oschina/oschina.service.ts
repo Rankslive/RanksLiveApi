@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import { oschinaBlogArticleIdType, oschinaBlogRankSortType, OschinaGroupType } from './types/oschina'
-import { oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
 import dayjs from 'dayjs'
 import { type CheerioAPI, load } from 'cheerio'
 import { ResponseData } from '../../../types/response.data'
-import { HttpClientService } from '@/common/service/http-client.service'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { oschinaGroups } from './constants/oschina.constants'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 // 专区列表数据源：https://apiv1.oschina.net/oschinapi/circle/list
 

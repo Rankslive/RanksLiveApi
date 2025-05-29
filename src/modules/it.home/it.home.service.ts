@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 import { ItHomeListRankType, ItHomeType } from './types/it.home'
-import { ItHomeList } from '@/modules/it.home/constants/it.home.constants'
 import { ResponseData } from '../../../types/response.data'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { ItHomeList } from './constants/it.home.constants'
 
 @Injectable()
 export class ItHomeService {

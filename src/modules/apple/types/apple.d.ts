@@ -4,8 +4,8 @@ import {
     AppleDevice,
     AppleRankList,
     AppleSystem
-} from '@/modules/apple/constants/apple.constants'
-import { AppleMusicDaily, AppleMusicGenres } from '@/modules/apple/constants/apple.music.constants'
+} from '../constants/apple.constants'
+import { AppleMusicDaily, AppleMusicGenres } from '../constants/apple.music.constants'
 
 export type AppleCategoryType = keyof typeof AppleCategory
 export type AppleCategoryValueType = (typeof AppleCategory)[AppleCategoryType]['value']

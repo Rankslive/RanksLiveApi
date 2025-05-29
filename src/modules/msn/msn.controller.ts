@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
-import { MsnService } from '@/modules/msn/msn.service'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
+import { MsnService } from './msn.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('msn')
 @ApiPlatform('msn')

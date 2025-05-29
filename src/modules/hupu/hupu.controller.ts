@@ -1,9 +1,9 @@
 import { Controller, Get, Query } from '@nestjs/common'
 import { HupuService } from './hupu.service'
 import { ApiOperation } from '@nestjs/swagger'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
 
 @Controller('hupu')
 @ApiPlatform('虎扑')

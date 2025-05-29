@@ -1,16 +1,11 @@
-import {
-    AppleCategoryType,
-    AppleCountryType,
-    AppleMusicDailyType,
-    AppleMusicType,
-    AppleRankType
-} from '@/modules/apple/types/apple'
-import { ApiPropertyEnumExtend } from '@/common/decorator/api.property.enum.extend.decorator'
 import { IsEnum } from 'class-validator'
-import { transformConstantsObjectToEnum } from '@/utils/helper'
-import { validateMessage } from '@/utils/validation.prompts'
-import { AppleCategory, AppleCountry, AppleRankList } from '@/modules/apple/constants/apple.constants'
-import { AppleMusicDaily, AppleMusicGenres } from '@/modules/apple/constants/apple.music.constants'
+import { ApiPropertyEnumExtend } from '../../common/decorator/api.property.enum.extend.decorator'
+import { transformConstantsObjectToEnum } from '../../utils/helper'
+import { AppleCategoryType, AppleCountryType, AppleMusicDailyType, AppleMusicType, AppleRankType } from './types/apple'
+import { validateMessage } from '../../utils/validation.prompts'
+import { AppleCategory, AppleCountry, AppleRankList } from './constants/apple.constants'
+import { AppleMusicDaily, AppleMusicGenres } from './constants/apple.music.constants'
+
 
 export class AppleCountryParamDto {
     @ApiPropertyEnumExtend('国家归属', AppleCountry, 'us')

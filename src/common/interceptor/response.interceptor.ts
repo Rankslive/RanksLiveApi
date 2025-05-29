@@ -1,12 +1,12 @@
 import { CallHandler, ExecutionContext, HttpStatus, Injectable, NestInterceptor } from '@nestjs/common'
 import { map, Observable } from 'rxjs'
-import { ResponseDto } from '@/common/dto/response.dto'
 import { Request, Response } from 'express'
-import { METHODS } from '@/constants/base.constants'
-import { SOURCE_URL_KEY } from '@/common/decorator/source.url.decorator'
-import { API_DESCRIPTION_KEY } from '@/common/decorator/api.description.decorator'
-import { API_PLATFORM_KEY } from '@/common/decorator/api.platform.decorator'
-import { ApiMetadataReader } from '@/common/meta.data/api.meta.data.reader'
+import { ApiMetadataReader } from '../meta.data/api.meta.data.reader'
+import { METHODS } from '../../constants/base.constants'
+import { API_PLATFORM_KEY } from '../decorator/api.platform.decorator'
+import { API_DESCRIPTION_KEY } from '../decorator/api.description.decorator'
+import { SOURCE_URL_KEY } from '../decorator/source.url.decorator'
+import { ResponseDto } from '../dto/response.dto'
 
 @Injectable()
 export class ResponseInterceptor implements NestInterceptor {

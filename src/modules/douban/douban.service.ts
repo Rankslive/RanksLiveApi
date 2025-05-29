@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
-import { BASE_USER_AGENT } from '@/constants/base.constants'
 import { DouBanRankWeeklyType, douBanType, IDouBanRankWeekly } from './types/douban'
-import { HttpClientService } from '@/common/service/http-client.service'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { BASE_USER_AGENT } from '../../constants/base.constants'
 
 const DOUBAN_APP_USERAGENT = 'api-client/0.1.3 com.douban.frodo/7.100.0 iOS/18.0 model/iPad8,6 network/wifi'
 

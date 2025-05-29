@@ -1,14 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { CloudTencentService } from '@/modules/cloud.tencent/cloud.tencent.service'
-import { ApiDescription } from '@/common/decorator/api.description.decorator'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { CloudTencentParamDto, CloudTencentZoneParamDto } from '@/modules/cloud.tencent/cloud.tencent.dto'
-import {
-    cloudTencentConstants,
-    cloudTencentZoneConstants
-} from '@/modules/cloud.tencent/constants/cloud.tencent.constants'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { CloudTencentService } from './cloud.tencent.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiDescription } from '../../common/decorator/api.description.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { CloudTencentParamDto, CloudTencentZoneParamDto } from './cloud.tencent.dto'
+import { cloudTencentConstants, cloudTencentZoneConstants } from './constants/cloud.tencent.constants'
 
 @Controller('cloud.tencent')
 @ApiPlatform('腾讯云')

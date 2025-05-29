@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common'
 import { ApiOperation } from '@nestjs/swagger'
-import { JuejinService } from '@/modules/juejin/juejin.service'
-import { JuejinConstants } from '@/modules/juejin/constants/juejin.constants'
-import { JuejinArticleDto, JuejinAuthorDto } from '@/modules/juejin/juejin.dto'
-import { ApiMaintainers } from '@/common/decorator/api.maintainers.decorator'
-import { SourceUrl } from '@/common/decorator/source.url.decorator'
-import { ApiPlatform } from '@/common/decorator/api.platform.decorator'
+import { JuejinService } from './juejin.service'
+import { ApiPlatform } from '../../common/decorator/api.platform.decorator'
+import { ApiMaintainers } from '../../common/decorator/api.maintainers.decorator'
+import { SourceUrl } from '../../common/decorator/source.url.decorator'
+import { JuejinArticleDto, JuejinAuthorDto } from './juejin.dto'
+import { JuejinConstants } from './constants/juejin.constants'
 
 @Controller('juejin')
 @ApiPlatform('稀土掘金')

@@ -1,13 +1,8 @@
 import { Injectable } from '@nestjs/common'
-import { HttpClientService } from '@/common/service/http-client.service'
-import {
-    AppleCountryType,
-    AppleMusicDailyType,
-    AppleMusicDailyValueType,
-    AppleMusicGenresType
-} from '@/modules/apple/types/apple'
 import { ResponseData } from '../../../types/response.data'
-import { AppleMusicDaily } from '@/modules/apple/constants/apple.music.constants'
+import { HttpClientService } from '../../common/service/http-client.service'
+import { AppleCountryType, AppleMusicDailyType, AppleMusicDailyValueType, AppleMusicGenresType } from './types/apple'
+import { AppleMusicDaily } from './constants/apple.music.constants'
 
 @Injectable()
 export class AppleMusicService {

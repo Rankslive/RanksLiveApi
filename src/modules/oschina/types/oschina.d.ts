@@ -1,4 +1,4 @@
-import { oschinaBlogArticle, oschinaBlogRankSort, oschinaGroups } from '@/modules/oschina/constants/oschina.constants'
+import { oschinaBlogArticle, oschinaBlogRankSort, oschinaGroups } from '../constants/oschina.constants'
 
 export type OschinaGroupType = (typeof oschinaGroups)[keyof typeof oschinaGroups]['value']
 export type oschinaBlogArticleType = (typeof oschinaBlogArticle)[keyof typeof oschinaBlogArticle]['value']
