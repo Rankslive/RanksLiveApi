@@ -5,7 +5,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { version } from '../package.json'
 
 async function bootstrap() {
-    const app = await NestFactory.create(AppModule, { cors: true })
+    const app = await NestFactory.create(AppModule)
 
     // 跨域
     app.enableCors()
