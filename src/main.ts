@@ -41,11 +41,12 @@ async function bootstrap() {
     return app.getUrl()
 }
 
-void (async (): Promise<void> => {
-    try {
-        const url = await bootstrap()
-        Logger.log(url, 'Bootstrap')
-    } catch (error) {
-        Logger.error(error, 'Bootstrap')
-    }
-})()
+// void (async (): Promise<void> => {
+//     try {
+//         const url = await bootstrap()
+//         Logger.log(url, 'Bootstrap')
+//     } catch (error) {
+//         Logger.error(error, 'Bootstrap')
+//     }
+// })()
+bootstrap()
