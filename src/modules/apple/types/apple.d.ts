@@ -1,10 +1,4 @@
-import {
-    AppleCategory,
-    AppleCountry,
-    AppleDevice,
-    AppleRankList,
-    AppleSystem
-} from '../constants/apple.constants'
+import { AppleCategory, AppleCountry, AppleDevice, AppleRankList, AppleSystem } from '../constants/apple.constants'
 import { AppleMusicDaily, AppleMusicGenres } from '../constants/apple.music.constants'
 
 export type AppleCategoryType = keyof typeof AppleCategory

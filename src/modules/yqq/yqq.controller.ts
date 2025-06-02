@@ -7,7 +7,6 @@ import { SourceUrl } from '../../common/decorator/source.url.decorator'
 import { YQqParamDto } from './yqq.dto'
 import { YQqConstants } from './constants/y.qq.constants'
 
-
 @Controller('yqq')
 @ApiPlatform('QQ 音乐')
 export class YqqController {

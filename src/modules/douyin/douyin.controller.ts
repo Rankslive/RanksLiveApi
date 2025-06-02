@@ -8,8 +8,7 @@ import { ApiDescription } from '../../common/decorator/api.description.decorator
 @Controller('douyin')
 @ApiPlatform('抖音')
 export class DouyinController {
-    constructor(private readonly DouYinService: DouyinService) {
-    }
+    constructor(private readonly DouYinService: DouyinService) {}
 
     @Get('hot')
     @ApiDescription('获取抖音热榜')

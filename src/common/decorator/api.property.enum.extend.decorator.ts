@@ -1,7 +1,6 @@
 import { ApiPropertyExtend } from './api.property.extend.decorator'
 import { transformConstantsToOptions } from '../../utils/helper'
 
-
 export const ApiPropertyEnumExtend = (description: string, enums: any, defaultValue: string) =>
     ApiPropertyExtend({
         description: description,

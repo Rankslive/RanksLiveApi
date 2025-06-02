@@ -1,10 +1,4 @@
-import {
-    zhihuConstants,
-    zhihuCreatorDomain,
-    zhihuPeriod,
-    zhihuSort,
-    zhihuSortType
-} from '../constants/zhihu.constants'
+import { zhihuConstants, zhihuCreatorDomain, zhihuPeriod, zhihuSort, zhihuSortType } from '../constants/zhihu.constants'
 
 export type zhihuSubScenesType = `${zhihuConstants}`
 

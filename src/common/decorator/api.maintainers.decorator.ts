@@ -6,7 +6,8 @@ import { isArray } from 'radash'
  * @param authors github 上的维护者用户名，即：https://github.com/{owner}
  * @constructor
  */
-export const ApiMaintainers = (authors: string | string[]) => ApiExtension('x-maintainers', !isArray(authors) ? [authors] : authors)
+export const ApiMaintainers = (authors: string | string[]) =>
+    ApiExtension('x-maintainers', !isArray(authors) ? [authors] : authors)
 
 // export const ApiMaintainers = (authors: string | string[]) => ApiExtension('x-maintainers', {
 //     authors,

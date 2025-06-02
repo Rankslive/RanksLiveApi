@@ -8,8 +8,7 @@ import { ApiDescription } from '../../common/decorator/api.description.decorator
 @Controller('ifeng.news')
 @ApiPlatform('凤凰新闻')
 export class IfengNewsController {
-    constructor(private readonly ifengNewsService: IfengNewsService) {
-    }
+    constructor(private readonly ifengNewsService: IfengNewsService) {}
 
     @Get('hot')
     @ApiDescription('获取凤凰新闻热榜')

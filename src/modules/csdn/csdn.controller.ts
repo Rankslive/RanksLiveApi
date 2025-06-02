@@ -9,8 +9,7 @@ import { CsdnConstants } from './constants/csdn.constants'
 @Controller('csdn')
 @ApiPlatform('CSDN')
 export class CsdnController {
-    constructor(private readonly csdnService: CsdnService) {
-    }
+    constructor(private readonly csdnService: CsdnService) {}
 
     @Get('article/hot-rank')
     @ApiOperation({ summary: '获取CSDN全站综合热榜' })

@@ -10,8 +10,7 @@ import { DoubanConstants } from './constants/douban.constants'
 @Controller('douban')
 @ApiPlatform('豆瓣')
 export class DoubanController {
-    constructor(private readonly doubanService: DoubanService) {
-    }
+    constructor(private readonly doubanService: DoubanService) {}
 
     @Get('real/:type')
     @ApiDescription('获取豆瓣榜单 · 书影音、电影、电视榜')

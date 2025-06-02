@@ -6,7 +6,6 @@ import { validateMessage } from '../../utils/validation.prompts'
 import { AppleCategory, AppleCountry, AppleRankList } from './constants/apple.constants'
 import { AppleMusicDaily, AppleMusicGenres } from './constants/apple.music.constants'
 
-
 export class AppleCountryParamDto {
     @ApiPropertyEnumExtend('国家归属', AppleCountry, 'us')
     @IsEnum(transformConstantsObjectToEnum(AppleCountry), { message: validateMessage('country') })

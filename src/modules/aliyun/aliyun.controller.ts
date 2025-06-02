@@ -8,8 +8,7 @@ import { ApiDescription } from '../../common/decorator/api.description.decorator
 @Controller('aliyun')
 @ApiPlatform('阿里云')
 export class AliyunController {
-    constructor(private readonly aliyunService: AliyunService) {
-    }
+    constructor(private readonly aliyunService: AliyunService) {}
 
     @Get('real')
     @ApiDescription('获取阿里云热门文章')

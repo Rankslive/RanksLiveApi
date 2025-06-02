@@ -10,8 +10,7 @@ import { NeteaseConstants } from './constants/netease.constants'
 @Controller('netease.music')
 @ApiPlatform('网易云音乐')
 export class NeteaseController {
-    constructor(private readonly NeteaseService: NeteaseService) {
-    }
+    constructor(private readonly NeteaseService: NeteaseService) {}
 
     @Get('rank/:type')
     @ApiDescription('获取网易云音乐榜单')

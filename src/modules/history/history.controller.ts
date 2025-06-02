@@ -9,8 +9,7 @@ import { ApiDescription } from '../../common/decorator/api.description.decorator
 @Controller('history')
 @ApiPlatform('历史上的今天')
 export class HistoryController {
-    constructor(private readonly historyService: HistoryService) {
-    }
+    constructor(private readonly historyService: HistoryService) {}
 
     @Get()
     @ApiDescription('获取历史上的今天')
