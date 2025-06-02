@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core'
-import { ValidationPipe } from '@nestjs/common'
+import { Logger, ValidationPipe } from '@nestjs/common'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { version } from '../package.json'
 import { AppModule } from './app.module'
@@ -41,12 +41,11 @@ async function bootstrap() {
     return app.getUrl()
 }
 
-// void (async (): Promise<void> => {
-//     try {
-//         const url = await bootstrap()
-//         Logger.log(url, 'Bootstrap')
-//     } catch (error) {
-//         Logger.error(error, 'Bootstrap')
-//     }
-// })()
-bootstrap()
+void (async (): Promise<void> => {
+    try {
+        const url = await bootstrap()
+        Logger.log(url, 'Bootstrap')
+    } catch (error) {
+        Logger.error(error, 'Bootstrap')
+    }
+})()
